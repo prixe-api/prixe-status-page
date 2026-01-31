@@ -27,7 +27,7 @@ jobs:
 
       # Step 1: Check uptime for all endpoints
       - name: "Step 1/7: Check Uptime"
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "update"
         env:
@@ -44,7 +44,7 @@ jobs:
 
       # Step 3: Record response times
       - name: "Step 3/7: Record Response Times"
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "response-time"
         env:
@@ -53,7 +53,7 @@ jobs:
 
       # Step 4: Generate graphs
       - name: "Step 4/7: Generate Graphs"
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "graphs"
         env:
@@ -62,7 +62,7 @@ jobs:
 
       # Step 5: Update summary
       - name: "Step 5/7: Update Summary"
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "summary"
         env:
@@ -71,7 +71,7 @@ jobs:
 
       # Step 6: Build static site
       - name: "Step 6/7: Build Static Site"
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "site"
         env:

@@ -22,7 +22,7 @@ jobs:
           git config user.email "upptime@users.noreply.github.com"
       
       - name: Update from template
-        uses: upptime/uptime-monitor@master
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "update-template"
         env:
