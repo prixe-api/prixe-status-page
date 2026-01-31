@@ -17,35 +17,16 @@ user-agent: prixe-api-monitor
 # Go to: Repository Settings > Secrets and variables > Actions > New repository secret
 
 sites:
-  # Main API Health Check - Basic connectivity test
-  - name: Prixe API (Base)
-    url: https://api.prixe.io
-    icon: https://prixe.io/static/images/prixe.png
-    maxResponseTime: 5000
-
-  # WebSocket Server Health Check (TCP ping for port connectivity)
-  - name: WebSocket Server (TCP)
-    check: "tcp-ping"
-    url: ws.prixe.io
-    port: 443
-    icon: https://prixe.io/static/images/prixe.png
-
-  # WebSocket Endpoint Health Check (HTTPS handshake test)
-  # Tests the WebSocket upgrade endpoint - expects 426 (Upgrade Required) or connection response
-  # This validates the ws endpoint is responding with authentication
-  - name: WebSocket Endpoint
-    url: https://ws.prixe.io/ws?api_key=$PRIXE_API_KEY
+  # WebSocket Server Health Check
+  # Simple GET to verify the WebSocket server is responding
+  # Without upgrade headers, server returns 426 (Upgrade Required) confirming it's alive
+  - name: WebSocket Server
+    url: https://ws.prixe.io/ws
     method: GET
-    headers:
-      - "Connection: Upgrade"
-      - "Upgrade: websocket"
-      - "Sec-WebSocket-Version: 13"
-      - "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ=="
     expectedStatusCodes:
-      - 101  # Switching Protocols (successful WebSocket upgrade)
-      - 200  # OK (if server responds differently)
-      - 400  # Bad Request (server is responding, just not upgrading)
-      - 426  # Upgrade Required (server recognizes WebSocket request)
+      - 426  # Upgrade Required (server is alive, needs WebSocket upgrade)
+      - 400  # Bad Request (server responding, missing upgrade headers)
+      - 200  # OK (if server has a health endpoint)
     maxResponseTime: 10000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -178,7 +159,7 @@ status-website:
     - title: Status
       href: /
     - title: API Documentation
-      href: https://api.prixe.io/docs
+      href: https://prixe.io/docs
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 

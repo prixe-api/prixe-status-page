@@ -31,3 +31,15 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+      
+      - name: Setup Node.js for WebSocket test
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Test WebSocket connection
+        run: |
+          npm install ws
+          node .github/scripts/test-websocket.js
+        env:
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

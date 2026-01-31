@@ -20,8 +20,13 @@ jobs:
           git config user.name "Upptime Bot"
           git config user.email "upptime@users.noreply.github.com"
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       # Step 1: Check uptime for all endpoints
-      - name: "Step 1/6: Check Uptime"
+      - name: "Step 1/7: Check Uptime"
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "update"
@@ -29,8 +34,16 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 2: Record response times
-      - name: "Step 2/6: Record Response Times"
+      # Step 2: Test WebSocket connection
+      - name: "Step 2/7: Test WebSocket"
+        run: |
+          npm install ws
+          node .github/scripts/test-websocket.js
+        env:
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+
+      # Step 3: Record response times
+      - name: "Step 3/7: Record Response Times"
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "response-time"
@@ -38,8 +51,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 3: Generate graphs
-      - name: "Step 3/6: Generate Graphs"
+      # Step 4: Generate graphs
+      - name: "Step 4/7: Generate Graphs"
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "graphs"
@@ -47,8 +60,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 4: Update summary
-      - name: "Step 4/6: Update Summary"
+      # Step 5: Update summary
+      - name: "Step 5/7: Update Summary"
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "summary"
@@ -56,8 +69,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 5: Build static site
-      - name: "Step 5/6: Build Static Site"
+      # Step 6: Build static site
+      - name: "Step 6/7: Build Static Site"
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "site"
@@ -65,8 +78,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 6: Deploy to GitHub Pages
-      - name: "Step 6/6: Deploy to GitHub Pages"
+      # Step 7: Deploy to GitHub Pages
+      - name: "Step 7/7: Deploy to GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
