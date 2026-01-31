@@ -33,10 +33,10 @@ git push -u origin main
 
 Go to your repository **Settings** > **Secrets and variables** > **Actions** and add the following secrets:
 
-| Secret Name | Description | Required |
-|-------------|-------------|----------|
-| `GH_PAT` | GitHub Personal Access Token with `repo` scope | Yes |
-| `PRIXE_API_KEY` | Your Prixe API key for authenticated endpoints | Yes |
+| Secret Name     | Description                                    | Required |
+| --------------- | ---------------------------------------------- | -------- |
+| `GH_PAT`        | GitHub Personal Access Token with `repo` scope | Yes      |
+| `PRIXE_API_KEY` | Your Prixe API key for authenticated endpoints | Yes      |
 
 #### Creating a GitHub Personal Access Token (GH_PAT)
 
@@ -72,31 +72,35 @@ To use a custom domain like `status.prixe.io`:
 
 ## 📊 Monitored Endpoints
 
-| Endpoint | Description | Method |
-|----------|-------------|--------|
-| Prixe API (Base) | Main API health check | GET |
-| WebSocket Server | Real-time data streaming server | TCP |
-| Search API | Stock ticker search | POST |
-| Last Sold Price API | Real-time price data | POST |
-| Historical Price API | Historical price data | POST |
-| Market Stats API | Market gainers/losers | POST |
-| News API | Stock news fetching | POST |
+| Endpoint             | Description                     | Method |
+| -------------------- | ------------------------------- | ------ |
+| Prixe API (Base)     | Main API health check           | GET    |
+| WebSocket Server     | Real-time data streaming server | TCP    |
+| Search API           | Stock ticker search             | POST   |
+| Last Sold Price API  | Real-time price data            | POST   |
+| Historical Price API | Historical price data           | POST   |
+| Market Stats API     | Market gainers/losers           | POST   |
+| News API             | Stock news fetching             | POST   |
 
 ## 🔔 Notifications (Optional)
 
 You can configure notifications to be alerted when services go down. Add these secrets to enable notifications:
 
 ### Slack
+
 - `NOTIFICATION_SLACK_WEBHOOK`: Your Slack webhook URL
 
 ### Discord
+
 - `NOTIFICATION_DISCORD_WEBHOOK`: Your Discord webhook URL
 
 ### Telegram
+
 - `NOTIFICATION_TELEGRAM_BOT_KEY`: Your Telegram bot token
 - `NOTIFICATION_TELEGRAM_CHAT_ID`: Your Telegram chat ID
 
 ### Email (SMTP)
+
 - `NOTIFICATION_SMTP_HOST`: SMTP server hostname
 - `NOTIFICATION_SMTP_PORT`: SMTP server port
 - `NOTIFICATION_SMTP_USERNAME`: SMTP username
@@ -108,15 +112,15 @@ See [Upptime Notifications Documentation](https://upptime.js.org/docs/notificati
 
 ## 🔄 Workflow Schedules
 
-| Workflow | Schedule | Description |
-|----------|----------|-------------|
-| Uptime CI | Every 5 minutes | Checks endpoint availability |
-| Response Time CI | Every 6 hours | Records response times |
-| Graphs CI | Daily at midnight | Generates response time graphs |
-| Static Site CI | Daily at 1 AM | Rebuilds the status page |
-| Summary CI | Daily at midnight | Updates status summary |
-| Update Template CI | Weekly (Sundays) | Updates from Upptime template |
-| Setup CI | On config change | Runs after `.upptimerc.yml` changes |
+| Workflow           | Schedule          | Description                         |
+| ------------------ | ----------------- | ----------------------------------- |
+| Uptime CI          | Every 5 minutes   | Checks endpoint availability        |
+| Response Time CI   | Every 6 hours     | Records response times              |
+| Graphs CI          | Daily at midnight | Generates response time graphs      |
+| Static Site CI     | Daily at 1 AM     | Rebuilds the status page            |
+| Summary CI         | Daily at midnight | Updates status summary              |
+| Update Template CI | Weekly (Sundays)  | Updates from Upptime template       |
+| Setup CI           | On config change  | Runs after `.upptimerc.yml` changes |
 
 ## 🛠️ Manual Triggers
 
