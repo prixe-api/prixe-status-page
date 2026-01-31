@@ -5,7 +5,7 @@
 # REPOSITORY SETTINGS
 # =============================================================================
 # IMPORTANT: Update these values with your GitHub username and repository name
-owner: YOUR_GITHUB_USERNAME  # Replace with your GitHub username
+owner: prixe-api
 repo: prixe-status-page      # Replace with your repository name if different
 
 user-agent: prixe-api-monitor
