@@ -21,10 +21,18 @@ jobs:
           git config user.name "Upptime Bot"
           git config user.email "upptime@users.noreply.github.com"
       
-      - name: Build and deploy static site
+      - name: Build static site
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./site/__sapper__/export
+          publish_branch: gh-pages
+          force_orphan: true
