@@ -142,13 +142,17 @@ sites:
 status-website:
   # Site branding
   name: Prixe API Status
-  logoUrl: https://prixe.io/static/images/prixe.png
+  # Uncomment and set your logo URL
+  # logoUrl: https://your-logo-url.com/logo.png
   
   # Theme: light, dark, night, or ocean
-  theme: light
+  theme: dark
   
-  # Custom domain
+  # Custom domain (uncomment if you have one)
   cname: status.prixe.io
+  
+  # If not using custom domain, set baseUrl to your repo name
+  #baseUrl: /prixe-status-page
   
   # Navigation bar links
   navbar:
@@ -171,150 +175,8 @@ status-website:
     **WebSocket:** `wss://ws.prixe.io/ws`
 
   # Favicon
-  favicon: https://prixe.io/static/images/prixe.png
-
-  # Custom CSS to match Prixe site styling
-  css: |
-    :root {
-      --primary-color: #6366f1;
-      --primary-hover: #4f46e5;
-      --accent-color: #ec4899;
-      --background-color: #ffffff;
-      --secondary-background: #f9fafb;
-      --text-color: #1e293b;
-      --text-light: #64748b;
-      --border-color: #e2e8f0;
-    }
-    
-    * {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-    }
-    
-    /* Header/Navbar */
-    nav, header, .navbar {
-      background-color: var(--background-color) !important;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    nav a, .navbar a {
-      color: var(--text-color) !important;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    
-    nav a:hover, .navbar a:hover {
-      color: var(--primary-color) !important;
-    }
-    
-    /* Main content */
-    main {
-      background-color: var(--secondary-background);
-    }
-    
-    /* Cards */
-    .card, article, section {
-      background-color: var(--background-color);
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border: 1px solid var(--border-color);
-    }
-    
-    /* Status indicators */
-    .status-up, .up, [class*="up"] {
-      color: #10b981 !important;
-    }
-    
-    .status-down, .down, [class*="down"] {
-      color: #ef4444 !important;
-    }
-    
-    /* Links */
-    a {
-      color: var(--primary-color);
-      transition: color 0.3s ease;
-    }
-    
-    a:hover {
-      color: var(--primary-hover);
-    }
-    
-    /* Buttons */
-    button, .btn {
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 0.5rem;
-      padding: 0.625rem 1.25rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border: none;
-    }
-    
-    button:hover, .btn:hover {
-      background-color: var(--primary-hover);
-    }
-    
-    /* Headings */
-    h1, h2, h3, h4, h5, h6 {
-      color: var(--text-color);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-    
-    h1 {
-      font-size: 2.25rem;
-      letter-spacing: -0.025em;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--background-color);
-      border-top: 1px solid var(--border-color);
-      color: var(--text-light);
-    }
-    
-    /* Progress bars / uptime bars */
-    .progress, .bar {
-      background-color: var(--secondary-background);
-      border-radius: 0.5rem;
-    }
-    
-    .progress-bar, .bar-fill {
-      background-color: var(--primary-color);
-      border-radius: 0.5rem;
-    }
-    
-    /* Tables */
-    table {
-      border-collapse: collapse;
-    }
-    
-    th, td {
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.75rem 1rem;
-    }
-    
-    th {
-      color: var(--text-light);
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-    
-    /* Graphs */
-    .chart-container {
-      background-color: var(--background-color);
-      border-radius: 0.75rem;
-      padding: 1rem;
-    }
+  # favicon: https://prixe.io/static/images/prixe.png
+  # faviconSvg: https://api.prixe.io/logo.svg
 
 # =============================================================================
 # NOTIFICATION SETTINGS (Optional)
