@@ -1,0 +1,66 @@
+# Run All CI - Runs all workflows in sequence
+# Use this for initial setup or full refresh of status page
+
+name: Run All CI
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  run-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0  # Fetch all history for all branches
+
+      - name: Configure Git
+        run: |
+          git config user.name "Upptime Bot"
+          git config user.email "upptime@users.noreply.github.com"
+
+      # Step 1: Check uptime for all endpoints
+      - name: "Step 1/5: Check Uptime"
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "update"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+
+      # Step 2: Record response times
+      - name: "Step 2/5: Record Response Times"
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "response-time"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+
+      # Step 3: Generate graphs
+      - name: "Step 3/5: Generate Graphs"
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "graphs"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+
+      # Step 4: Update summary
+      - name: "Step 4/5: Update Summary"
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "summary"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+
+      # Step 5: Build and deploy static site
+      - name: "Step 5/5: Build Static Site"
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
