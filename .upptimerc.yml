@@ -149,10 +149,10 @@ status-website:
   theme: dark
   
   # Custom domain (uncomment if you have one)
-  # cname: status.prixe.io
+  cname: status.prixe.io
   
   # If not using custom domain, set baseUrl to your repo name
-  baseUrl: /prixe-status-page
+  #baseUrl: /prixe-status-page
   
   # Navigation bar links
   navbar:
