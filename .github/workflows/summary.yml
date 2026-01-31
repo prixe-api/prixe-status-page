@@ -1,0 +1,25 @@
+# Summary CI - Updates the status summary
+
+name: Summary CI
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Run daily at midnight
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Update summary
+        uses: upptime/uptime-monitor@v1.26.0
+        with:
+          command: "summary"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

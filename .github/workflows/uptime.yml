@@ -1,0 +1,28 @@
+# Uptime CI - Checks endpoints every hour
+# This is the main monitoring workflow
+
+name: Uptime CI
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Run every hour
+  workflow_dispatch:        # Allow manual trigger
+  repository_dispatch:
+    types: [check_uptime]
+
+jobs:
+  uptime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Check uptime
+        uses: upptime/uptime-monitor@v1.26.0
+        with:
+          command: "update"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

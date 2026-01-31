@@ -1,0 +1,25 @@
+# Response Time CI - Records response times
+
+name: Response Time CI
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Run every hour
+  workflow_dispatch:        # Allow manual trigger
+
+jobs:
+  response-time:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Record response time
+        uses: upptime/uptime-monitor@v1.26.0
+        with:
+          command: "response-time"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

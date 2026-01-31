@@ -1,0 +1,25 @@
+# Static Site CI - Builds and deploys the status page
+
+name: Static Site CI
+
+on:
+  schedule:
+    - cron: "0 1 * * *"  # Run daily at 1 AM
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Build and deploy static site
+        uses: upptime/uptime-monitor@v1.26.0
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

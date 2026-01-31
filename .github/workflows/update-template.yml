@@ -1,0 +1,25 @@
+# Update Template CI - Updates from Upptime template
+
+name: Update Template CI
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"  # Run weekly on Sundays at midnight
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  update-template:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Update from template
+        uses: upptime/uptime-monitor@v1.26.0
+        with:
+          command: "update-template"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}

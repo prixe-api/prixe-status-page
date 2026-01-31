@@ -1,0 +1,247 @@
+# Upptime Configuration for Prixe Stock Data API
+# Documentation: https://upptime.js.org/docs/configuration
+
+# =============================================================================
+# REPOSITORY SETTINGS
+# =============================================================================
+# IMPORTANT: Update these values with your GitHub username and repository name
+owner: YOUR_GITHUB_USERNAME  # Replace with your GitHub username
+repo: prixe-status-page      # Replace with your repository name if different
+
+user-agent: prixe-api-monitor
+
+# =============================================================================
+# MONITORED ENDPOINTS
+# =============================================================================
+# Your API key should be stored as a GitHub secret named PRIXE_API_KEY
+# Go to: Repository Settings > Secrets and variables > Actions > New repository secret
+
+sites:
+  # Main API Health Check - Basic connectivity test
+  - name: Prixe API (Base)
+    url: https://api.prixe.io
+    icon: https://prixe.io/static/images/prixe.png
+    maxResponseTime: 5000
+
+  # WebSocket Server Health Check (TCP ping for port connectivity)
+  - name: WebSocket Server (TCP)
+    check: "tcp-ping"
+    url: ws.prixe.io
+    port: 443
+    icon: https://prixe.io/static/images/prixe.png
+
+  # WebSocket Endpoint Health Check (HTTPS handshake test)
+  # Tests the WebSocket upgrade endpoint - expects 426 (Upgrade Required) or connection response
+  # This validates the ws endpoint is responding with authentication
+  - name: WebSocket Endpoint
+    url: https://ws.prixe.io/ws?api_key=$PRIXE_API_KEY
+    method: GET
+    headers:
+      - "Connection: Upgrade"
+      - "Upgrade: websocket"
+      - "Sec-WebSocket-Version: 13"
+      - "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ=="
+    expectedStatusCodes:
+      - 101  # Switching Protocols (successful WebSocket upgrade)
+      - 200  # OK (if server responds differently)
+      - 400  # Bad Request (server is responding, just not upgrading)
+      - 426  # Upgrade Required (server recognizes WebSocket request)
+    maxResponseTime: 10000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Search API Endpoint - Tests authenticated POST request
+  - name: Search API
+    url: https://api.prixe.io/api/search
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"query": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 10000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Last Sold Price API - Tests real-time price endpoint
+  - name: Last Sold Price API
+    url: https://api.prixe.io/api/last_sold
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Historical Price API - Tests historical data endpoint
+  - name: Historical Price API
+    url: https://api.prixe.io/api/price
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "start_date": "2025-01-01", "end_date": "2025-01-15", "interval": "1d"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Market Statistics API - Tests market data endpoint
+  - name: Market Stats API
+    url: https://api.prixe.io/api/stats
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"data_type": "gainers"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # News API - Tests news fetching endpoint
+  - name: News API
+    url: https://api.prixe.io/api/news
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    # News API can take up to 10 seconds for non-cached responses
+    maxResponseTime: 30000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SEC Forms API (GET) - Available SEC Forms (Pro+ Feature)
+  - name: SEC Forms List API
+    url: https://api.prixe.io/api/forms?ticker=AAPL
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SEC Forms API (POST) - SEC Form Data (Pro+ Feature)
+  - name: SEC Forms Data API
+    url: https://api.prixe.io/api/forms
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "form": "10-K", "year": 2024}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Board Members API (Pro+ Feature)
+  - name: Board Members API
+    url: https://api.prixe.io/api/board_members
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "articles": false}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+# =============================================================================
+# STATUS WEBSITE CONFIGURATION
+# =============================================================================
+status-website:
+  # Site branding
+  name: Prixe API Status
+  # Uncomment and set your logo URL
+  # logoUrl: https://your-logo-url.com/logo.png
+  
+  # Theme: light, dark, night, or ocean
+  theme: dark
+  
+  # Custom domain (uncomment if you have one)
+  # cname: status.prixe.io
+  
+  # If not using custom domain, set baseUrl to your repo name
+  baseUrl: /prixe-status-page
+  
+  # Navigation bar links
+  navbar:
+    - title: Status
+      href: /
+    - title: API Documentation
+      href: https://api.prixe.io/docs
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+  # Introduction text on the status page
+  introTitle: "**Prixe Stock Data API** Status"
+  introMessage: |
+    This page provides real-time status information for the Prixe Stock Data API.
+    
+    Our API provides real-time and historical stock market data with Bearer token authentication.
+    
+    **Base URL:** `https://api.prixe.io`
+    
+    **WebSocket:** `wss://ws.prixe.io/ws`
+
+  # Favicon
+  # favicon: https://prixe.io/static/images/prixe.png
+  # faviconSvg: https://api.prixe.io/logo.svg
+
+# =============================================================================
+# NOTIFICATION SETTINGS (Optional)
+# =============================================================================
+# Configure notifications in repository secrets. See: https://upptime.js.org/docs/notifications
+# 
+# Supported services:
+# - Slack: NOTIFICATION_SLACK_WEBHOOK
+# - Discord: NOTIFICATION_DISCORD_WEBHOOK  
+# - Telegram: NOTIFICATION_TELEGRAM_BOT_KEY, NOTIFICATION_TELEGRAM_CHAT_ID
+# - Email (via SMTP): NOTIFICATION_SMTP_HOST, NOTIFICATION_SMTP_PORT, etc.
+
+# =============================================================================
+# ISSUE ASSIGNEES (Optional)
+# =============================================================================
+# Users to assign when downtime issues are created
+# assignees:
+#   - YOUR_GITHUB_USERNAME
+
+# =============================================================================
+# WORKFLOW SCHEDULE
+# =============================================================================
+# Customize how often checks run (cron syntax)
+workflowSchedule:
+  uptime: "0 * * * *"          # Check uptime every hour
+  responseTime: "0 * * * *"    # Record response time every hour
+  graphs: "0 0 * * *"          # Update graphs daily at midnight
+  staticSite: "0 1 * * *"      # Rebuild static site daily at 1 AM
+  summary: "0 0 * * *"         # Update summary daily at midnight
+
+# =============================================================================
+# COMMIT SETTINGS
+# =============================================================================
+commitMessages:
+  readmeContent: ":pencil: Update summary in README [skip ci] [upptime]"
+  summaryJson: ":card_file_box: Update status summary [skip ci] [upptime]"
+  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [skip ci] [upptime]"
+  graphsUpdate: ":bento: Update graphs [skip ci] [upptime]"
+
+# =============================================================================
+# ADDITIONAL SETTINGS
+# =============================================================================
+# Skip auto-deleting issues that are resolved within 15 minutes
+skipDeleteIssues: false
+
+# Skip repository metadata updates
+# skipDescriptionUpdate: true
+# skipTopicsUpdate: true
+# skipHomepageUpdate: true
