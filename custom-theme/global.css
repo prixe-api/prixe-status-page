@@ -64,8 +64,6 @@ a:hover {
 /* Cards / Articles */
 article {
   padding: 1.25rem 1.5rem;
-  padding-bottom: 4.5rem;
-  padding-bottom: 4.5rem;
   position: relative;
   border-radius: var(--radius-md, 0.5rem);
   border: 1px solid var(--card-border-color);
@@ -251,33 +249,14 @@ a.error-button:hover {
   padding: 0.25rem 0.5rem;
 }
 
-/* Graphs */
-article .graph {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  opacity: var(--graph-opacity, 0.3);
-  filter: var(--graph-filter);
-  border-radius: 0 0 var(--radius-md, 0.5rem) var(--radius-md, 0.5rem);
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
-}
-
-article .graph img,
-article .graph svg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom;
-}
-
-/* Ensure article content stays above graph */
-article > *:not(.graph) {
-  position: relative;
-  z-index: 1;
+/* Graphs - Hide inline graphs in cards to prevent overlap */
+article .graph,
+article img[src*="graph"],
+article svg.graph,
+.graph,
+section article canvas,
+article canvas {
+  display: none !important;
 }
 
 /* Code */
