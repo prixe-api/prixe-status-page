@@ -249,14 +249,12 @@ a.error-button:hover {
   padding: 0.25rem 0.5rem;
 }
 
-/* Graphs - Hide inline graphs in cards to prevent overlap */
-article .graph,
-article img[src*="graph"],
-article svg.graph,
-.graph,
-section article canvas,
-article canvas {
-  display: none !important;
+/* Graphs */
+article .graph {
+  opacity: var(--graph-opacity);
+  filter: var(--graph-filter);
+  border-radius: var(--radius-sm, 0.25rem);
+  overflow: hidden;
 }
 
 /* Code */
@@ -378,32 +376,4 @@ code {
 
 .btn-full {
   width: 100%;
-}
-
-/* Force vertical card layout - override any grid/flex row layout */
-section.sites,
-section[class*="status"],
-main section,
-.sites {
-  display: block !important;
-}
-
-/* Cards stack vertically */
-article {
-  display: block !important;
-  width: 100% !important;
-  margin-bottom: 0.75rem;
-}
-
-/* Hide graphs and response time details */
-article .graph,
-article canvas,
-article img[src*="graph"] {
-  display: none !important;
-}
-
-/* Hide "Average response time" text but keep uptime */
-article dl dd:last-of-type,
-article dl dt:last-of-type {
-  display: none !important;
 }
