@@ -78,8 +78,14 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
 
-      # Step 7: Deploy to GitHub Pages
-      - name: "Step 7/7: Deploy to GitHub Pages"
+      # Step 7: Apply custom theme
+      - name: "Step 7/8: Apply Custom Theme"
+        run: |
+          cp -f custom-theme/global.css ./site/__sapper__/export/global.css
+          cp -rf custom-theme/themes/* ./site/__sapper__/export/themes/
+
+      # Step 8: Deploy to GitHub Pages
+      - name: "Step 8/8: Deploy to GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}

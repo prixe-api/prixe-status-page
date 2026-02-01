@@ -29,6 +29,11 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
       
+      - name: Apply custom theme
+        run: |
+          cp -f custom-theme/global.css ./site/__sapper__/export/global.css
+          cp -rf custom-theme/themes/* ./site/__sapper__/export/themes/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
