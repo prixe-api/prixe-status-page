@@ -379,3 +379,71 @@ code {
 .btn-full {
   width: 100%;
 }
+
+/* Force vertical card layout */
+section {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem;
+}
+
+/* Hide horizontal card grid if Upptime uses one */
+section > div {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem;
+}
+
+/* Simplified card layout - horizontal with name and uptime */
+article {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.5rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Hide response time and other extra details */
+article dl,
+article .response-time,
+article p:not(:first-of-type),
+article div:not(.f):not(.tag),
+article small,
+article span.data,
+article .data {
+  display: none !important;
+}
+
+/* Style the endpoint name */
+article h4,
+article a > strong,
+article strong {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Style the uptime percentage */
+article .f {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Keep only uptime visible in flex container */
+article .f > *:not(.tag):not([class*="uptime"]) {
+  display: none !important;
+}
+
+/* Make uptime percentage prominent */
+article p:first-of-type {
+  display: block !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--up-border-left-color);
+}
