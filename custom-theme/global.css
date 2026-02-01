@@ -377,3 +377,62 @@ code {
 .btn-full {
   width: 100%;
 }
+
+/* =============================================
+   STATUS CARDS - Vertical Layout
+   ============================================= */
+
+/* Container holding all status cards - force vertical stacking */
+main > div:last-of-type,
+section > div {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+/* Each status card - horizontal layout with name and uptime */
+main article {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0.875rem 1.25rem !important;
+  width: 100% !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Endpoint name styling */
+main article h4 {
+  margin: 0 !important;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Hide "Average response time" row */
+main article > div:last-child {
+  display: none !important;
+}
+
+/* Style the "Overall uptime" row */
+main article > div:first-of-type {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+/* Make uptime percentage stand out */
+main article > div:first-of-type > div {
+  font-weight: 700;
+  color: var(--up-border-left-color);
+}
+
+/* Hide graphs/images in cards */
+main article img,
+main article canvas,
+main article svg,
+main article .graph {
+  display: none !important;
+}
