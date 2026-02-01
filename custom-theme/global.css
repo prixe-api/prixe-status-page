@@ -382,57 +382,80 @@ code {
    STATUS CARDS - Vertical Layout
    ============================================= */
 
-/* Container holding all status cards - force vertical stacking */
-main > div:last-of-type,
-section > div {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.5rem !important;
-}
-
-/* Each status card - horizontal layout with name and uptime */
-main article {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 0.875rem 1.25rem !important;
-  width: 100% !important;
-  min-height: auto !important;
-  height: auto !important;
-}
-
-/* Endpoint name styling */
-main article h4 {
-  margin: 0 !important;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-/* Hide "Average response time" row */
-main article > div:last-child {
+/* Hide ALL graphs site-wide */
+img[src*="graph"],
+img[src*="response-time"],
+canvas,
+svg.graph,
+.graph {
   display: none !important;
 }
 
-/* Style the "Overall uptime" row */
-main article > div:first-of-type {
+/* Container holding status cards - force vertical stacking */
+main > div,
+main section,
+main > section {
+  display: block !important;
+}
+
+/* Target the card container specifically */
+main > div:has(> article) {
   display: flex !important;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-  font-size: 0.9rem;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
 }
 
-/* Make uptime percentage stand out */
-main article > div:first-of-type > div {
-  font-weight: 700;
-  color: var(--up-border-left-color);
+/* Each status card styling */
+article {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.5rem !important;
+  width: 100% !important;
+  min-height: unset !important;
+  height: auto !important;
+  background: var(--card-background-color) !important;
 }
 
-/* Hide graphs/images in cards */
-main article img,
-main article canvas,
-main article svg,
-main article .graph {
+/* Endpoint name styling */
+article h4 {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+article h4 a {
+  color: var(--body-text-color) !important;
+}
+
+/* Hide "Average response time" - it's the second div */
+article > div:nth-of-type(2) {
+  display: none !important;
+}
+
+/* Style "Overall uptime" row */
+article > div:first-of-type {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-left: auto !important;
+  font-size: 0.9rem !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Uptime percentage styling */
+article > div:first-of-type > div {
+  font-weight: 700 !important;
+  color: var(--up-border-left-color) !important;
+}
+
+/* Hide any images inside articles */
+article img {
   display: none !important;
 }
