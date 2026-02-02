@@ -31,10 +31,6 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_PAT || github.token }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.41.0
         with:
@@ -42,24 +38,3 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
-      - name: Test WebSocket
-        run: |
-          npm install ws
-          node .github/scripts/test-websocket.js
-        env:
-          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
-          WEBSOCKET_RESULT_FILE: ${{ github.workspace }}/websocket-result.json
-        continue-on-error: true
-      - name: Update WebSocket history from script result
-        run: node .github/scripts/update-websocket-history.js
-        env:
-          WEBSOCKET_RESULT_FILE: ${{ github.workspace }}/websocket-result.json
-      - name: Update summary
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "summary"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
-          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
