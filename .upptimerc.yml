@@ -168,7 +168,6 @@ status-website:
   introMessage: |
     This page provides real-time status information for the Prixe Stock Data API.
     
-    Our API provides real-time and historical stock market data with Bearer token authentication.
     
     **Base URL:** `https://api.prixe.io`
     
