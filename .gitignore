@@ -32,3 +32,4 @@ npm-debug.log*
 
 # WebSocket test result (workflow only)
 websocket-result.json
+to-do.md

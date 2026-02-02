@@ -20,7 +20,7 @@ sites:
   # WebSocket Server - Checked by script (connect + subscribe + verify), not HTTP GET.
   # Result written by .github/scripts/test-websocket.js in uptime workflow.
   - name: WebSocket Server
-    url: https://ws.prixe.io/ws?api_key=$PRIXE_API_KEY
+    url: https://ws.prixe.io/ws
     method: GET
     expectedStatusCodes:
       - 426
@@ -173,7 +173,7 @@ status-website:
     **WebSocket:** `wss://ws.prixe.io/ws`
 
   # Favicon
-  # favicon: https://prixe.io/static/images/prixe.png
+  favicon: https://prixe.io/static/images/prixe.png
   # faviconSvg: https://api.prixe.io/logo.svg
 
 # =============================================================================
