@@ -17,6 +17,18 @@ user-agent: prixe-api-monitor
 # Go to: Repository Settings > Secrets and variables > Actions > New repository secret
 
 sites:
+  # WebSocket Server - Checked by script (connect + subscribe + verify), not HTTP GET.
+  # Result written by .github/scripts/test-websocket.js in uptime workflow.
+  - name: WebSocket Server
+    url: https://ws.prixe.io/ws?api_key=$PRIXE_API_KEY
+    method: GET
+    expectedStatusCodes:
+      - 426
+      - 400
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
   # Search API Endpoint - Tests authenticated POST request
   - name: Search API
     url: https://api.prixe.io/api/search

@@ -29,3 +29,6 @@ npm-debug.log*
 # api/
 # graphs/
 # history/
+
+# WebSocket test result (workflow only)
+websocket-result.json

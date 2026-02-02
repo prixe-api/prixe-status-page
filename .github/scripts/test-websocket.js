@@ -44,9 +44,10 @@ function validatePriceUpdate(message) {
 }
 
 async function testWebSocket() {
+  const startTime = Date.now();
   return new Promise((resolve, reject) => {
     console.log('Connecting to WebSocket...');
-    
+
     const ws = new WebSocket(WS_URL);
     let passed = false;
     let successMessage = '';
@@ -66,7 +67,7 @@ async function testWebSocket() {
       successMessage = message;
       clearTimeout(timeout);
       ws.close();
-      resolve(message);
+      resolve({ message, responseTime: Date.now() - startTime });
     };
 
     ws.on('open', () => {
@@ -107,12 +108,22 @@ async function testWebSocket() {
   });
 }
 
+function writeResultFile(status, responseTime, code) {
+  const outPath = process.env.WEBSOCKET_RESULT_FILE;
+  if (!outPath) return;
+  const fs = require('fs');
+  fs.writeFileSync(outPath, JSON.stringify({ status, responseTime, code }), 'utf8');
+}
+
 testWebSocket()
   .then((result) => {
-    console.log('\n✓ SUCCESS:', result);
+    const responseTime = typeof result === 'object' && result.responseTime != null ? result.responseTime : 0;
+    console.log('\n✓ SUCCESS:', typeof result === 'object' ? result.message : result);
+    writeResultFile('up', responseTime, 200);
     process.exit(0);
   })
   .catch((error) => {
     console.error('\n✗ FAILED:', error.message);
+    writeResultFile('down', 0, 0);
     process.exit(1);
   });
