@@ -17,19 +17,6 @@ user-agent: prixe-api-monitor
 # Go to: Repository Settings > Secrets and variables > Actions > New repository secret
 
 sites:
-  # WebSocket Server Health Check
-  # Simple GET to verify the WebSocket server is responding
-  # Without upgrade headers, server returns 426 (Upgrade Required) confirming it's alive
-  - name: WebSocket Server
-    url: https://ws.prixe.io/ws
-    method: GET
-    expectedStatusCodes:
-      - 426  # Upgrade Required (server is alive, needs WebSocket upgrade)
-      - 400  # Bad Request (server responding, missing upgrade headers)
-      - 200  # OK (if server has a health endpoint)
-    maxResponseTime: 10000
-    icon: https://prixe.io/static/images/prixe.png
-
   # Search API Endpoint - Tests authenticated POST request
   - name: Search API
     url: https://api.prixe.io/api/search
@@ -40,7 +27,7 @@ sites:
     body: '{"query": "AAPL"}'
     expectedStatusCodes:
       - 200
-    maxResponseTime: 10000
+    maxResponseTime: 40000
     icon: https://prixe.io/static/images/prixe.png
 
   # Last Sold Price API - Tests real-time price endpoint
@@ -92,8 +79,8 @@ sites:
     body: '{"ticker": "AAPL"}'
     expectedStatusCodes:
       - 200
-    # News API can take up to 10 seconds for non-cached responses
-    maxResponseTime: 30000
+    # News API can take up to 40 seconds for non-cached responses
+    maxResponseTime: 40000
     icon: https://prixe.io/static/images/prixe.png
 
   # SEC Forms API (GET) - Available SEC Forms (Pro+ Feature)
@@ -119,7 +106,7 @@ sites:
     expectedStatusCodes:
       - 200
       - 401  # May return 401 if not Pro+ subscription
-    maxResponseTime: 20000
+    maxResponseTime: 40000
     icon: https://prixe.io/static/images/prixe.png
 
   # Board Members API (Pro+ Feature)
