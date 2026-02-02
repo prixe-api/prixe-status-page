@@ -146,7 +146,7 @@ status-website:
   # logoUrl: https://your-logo-url.com/logo.png
   
   # Theme: light, dark, night, or ocean
-  theme: dark
+  theme: light
   
   # Custom domain (uncomment if you have one)
   cname: status.prixe.io

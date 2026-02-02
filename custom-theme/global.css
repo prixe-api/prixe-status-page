@@ -379,60 +379,181 @@ code {
 }
 
 /* =============================================
-   STATUS CARDS - Vertical Layout
+   STATUS CARDS - Clean Vertical Layout
    ============================================= */
 
-/* Container holding all status cards - force vertical stacking */
-main > div:last-of-type,
-section > div {
+/* Center the Live Status heading container */
+main > .f:has(h2) {
   display: flex !important;
   flex-direction: column !important;
-  gap: 0.5rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto 1rem auto !important;
 }
 
-/* Each status card - horizontal layout with name and uptime */
-main article {
+/* Center the Live Status heading */
+main h2 {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Center the time period selector */
+main > .f > .f {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  gap: 1.5rem !important;
+}
+
+/* Force the live-status section to vertical layout and center */
+section.live-status,
+.live-status {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  gap: 0.4rem !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+}
+
+/* Target only the Live Status cards (articles with graph class) */
+/* Show graph in middle with endpoint name on left and status on right */
+article.graph,
+article[class*="graph"] {
+  background-image: none !important;
+  background-color: var(--card-background-color) !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 0.875rem 1.25rem !important;
+  padding: 0.5rem 0.75rem !important;
   width: 100% !important;
+  max-width: 500px !important;
   min-height: auto !important;
   height: auto !important;
+  flex: 0 0 auto !important;
+  gap: 0.5rem !important;
 }
 
-/* Endpoint name styling */
-main article h4 {
+/* Endpoint name styling - fixed width on left, ORDER 1 */
+article.graph h4,
+article[class*="graph"] h4 {
   margin: 0 !important;
-  font-size: 1rem;
+  font-size: 0.8rem;
   flex-shrink: 0;
+  white-space: nowrap;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  width: 120px !important;
+  min-width: 120px !important;
+  order: 1 !important;
 }
 
-/* Hide "Average response time" row */
-main article > div:last-child {
+/* Show graph in middle using ::before pseudo-element - ORDER 2 */
+article.graph::before,
+article[class*="graph"]::before {
+  content: "";
+  flex: 1 !important;
+  height: 28px !important;
+  background-image: var(--background) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  opacity: 0.85;
+  border-radius: 3px;
+  order: 2 !important;
+}
+
+/* Hide the icon image in h4 */
+article.graph h4 img.icon,
+article.graph h4 img,
+article[class*="graph"] h4 img {
   display: none !important;
 }
 
-/* Style the "Overall uptime" row */
-main article > div:first-of-type {
-  display: flex !important;
+/* Ensure link text is fully visible */
+article.graph h4 a,
+article[class*="graph"] h4 a {
+  white-space: nowrap;
+  overflow: visible !important;
+  color: inherit !important;
+}
+
+/* Hide both divs (Overall uptime and Average response time) - high specificity */
+article.graph > div,
+article[class*="graph"] > div,
+section.live-status article > div,
+.live-status article > div {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Add status tag based on article class - ORDER 3 */
+article.graph.up::after,
+article[class*="graph"].up::after {
+  content: "Operational";
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-  font-size: 0.9rem;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-md, 0.3rem);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  background: var(--tag-up-background-color);
+  color: var(--tag-color);
+  flex-shrink: 0;
+  order: 3 !important;
 }
 
-/* Make uptime percentage stand out */
-main article > div:first-of-type > div {
-  font-weight: 700;
-  color: var(--up-border-left-color);
+article.graph.down::after,
+article[class*="graph"].down::after {
+  content: "Down";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-md, 0.3rem);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  background: var(--tag-down-background-color);
+  color: var(--tag-color);
+  flex-shrink: 0;
+  order: 3 !important;
 }
 
-/* Hide graphs/images in cards */
-main article img,
-main article canvas,
-main article svg,
-main article .graph {
+article.graph.degraded::after,
+article[class*="graph"].degraded::after {
+  content: "Degraded";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-md, 0.3rem);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  background: var(--tag-degraded-background-color);
+  color: var(--tag-color);
+  flex-shrink: 0;
+  order: 3 !important;
+}
+
+/* Hide graphs/images in status cards */
+article.graph img,
+article.graph canvas,
+article.graph svg,
+article[class*="graph"] img,
+article[class*="graph"] canvas,
+article[class*="graph"] svg {
   display: none !important;
 }
