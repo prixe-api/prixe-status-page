@@ -8,7 +8,6 @@
 
 This repository contains the status page for the [Prixe Stock Data API](https://prixe.io), powered by [Upptime](https://github.com/upptime/upptime).
 
-
 ## 📊 Monitored Endpoints
 
 | Endpoint             | Description                     | Method |
@@ -32,7 +31,6 @@ This repository contains the status page for the [Prixe Stock Data API](https://
 | Summary CI         | Daily at midnight | Updates status summary              |
 | Update Template CI | Weekly (Sundays)  | Updates from Upptime template       |
 | Setup CI           | On config change  | Runs after `.upptimerc.yml` changes |
-
 
 ## 📁 Repository Structure
 
