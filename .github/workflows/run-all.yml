@@ -33,6 +33,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 2: Test WebSocket connection
       - name: "Step 2/7: Test WebSocket"
@@ -41,6 +42,7 @@ jobs:
           node .github/scripts/test-websocket.js
         env:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 3: Record response times
       - name: "Step 3/7: Record Response Times"
@@ -50,6 +52,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 4: Generate graphs
       - name: "Step 4/7: Generate Graphs"
@@ -59,6 +62,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 5: Update summary
       - name: "Step 5/7: Update Summary"
@@ -68,6 +72,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 6: Build static site
       - name: "Step 6/7: Build Static Site"
@@ -77,6 +82,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
       # Step 7: Apply custom theme
       - name: "Step 7/8: Apply Custom Theme"

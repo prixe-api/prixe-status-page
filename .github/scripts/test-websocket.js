@@ -7,7 +7,7 @@
 
 const WebSocket = require('ws');
 
-const WS_URL = `wss://ws.prixe.io/ws?api_key=${process.env.PRIXE_API_KEY}`;
+const WS_URL = `wss://ws.prixe.io/ws?api_key=${process.env.PRIXE_PRO_API_KEY}`;
 const TIMEOUT_MS = 15000;
 
 /**
