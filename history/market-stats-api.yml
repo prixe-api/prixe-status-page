@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/stats
-status: down
-code: 500
-responseTime: 94
-lastUpdated: 2026-02-07T13:50:56.103Z
+status: up
+code: 200
+responseTime: 250
+lastUpdated: 2026-02-07T14:16:30.922Z
 startTime: 2026-01-31T18:35:37.629Z
 generator: Upptime <https://github.com/upptime/upptime>
