@@ -80,19 +80,19 @@
     "url": "https://api.prixe.io/api/stats",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "market-stats-api",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 357,
-    "timeDay": 530,
-    "timeWeek": 357,
-    "timeMonth": 357,
-    "timeYear": 357,
+    "status": "up",
+    "uptime": "99.86%",
+    "uptimeDay": "99.10%",
+    "uptimeWeek": "99.86%",
+    "uptimeMonth": "99.86%",
+    "uptimeYear": "99.86%",
+    "time": 356,
+    "timeDay": 515,
+    "timeWeek": 356,
+    "timeMonth": 356,
+    "timeYear": 356,
     "dailyMinutesDown": {
-      "2026-02-07": 0
+      "2026-02-07": 13
     }
   },
   {
