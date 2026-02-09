@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/board_members
 status: down
-code: 429
-responseTime: 14
-lastUpdated: 2026-02-09T20:34:07.544Z
+code: 502
+responseTime: 2886
+lastUpdated: 2026-02-09T20:40:28.000Z
 startTime: 2026-01-31T18:35:54.784Z
 generator: Upptime <https://github.com/upptime/upptime>
