@@ -1,7 +1,7 @@
 url: https://ws.prixe.io/ws
-status: up
+status: degraded
 code: 426
-responseTime: 12069
-lastUpdated: 2026-02-10T09:02:12.937Z
+responseTime: 24349
+lastUpdated: 2026-02-10T09:49:58.722Z
 startTime: 2026-02-02T01:47:26.537Z
 generator: Upptime <https://github.com/upptime/upptime>
