@@ -9,6 +9,8 @@ const WebSocket = require('ws');
 
 const WS_URL = `wss://ws.prixe.io/ws?api_key=${process.env.PRIXE_PRO_API_KEY}`;
 const TIMEOUT_MS = 15000;
+const MAX_ATTEMPTS = 2;       // Report down only after this many consecutive failures
+const RETRY_DELAY_MS = 3000; // Wait between attempts
 
 /**
  * Validates subscription_status: {"event": "subscription_status", "data": {"status": "subscribed", "ticker": "TSLA"}}
@@ -115,7 +117,32 @@ function writeResultFile(status, responseTime, code) {
   fs.writeFileSync(outPath, JSON.stringify({ status, responseTime, code }), 'utf8');
 }
 
-testWebSocket()
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runWithRetries() {
+  let lastError;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    if (attempt > 1) {
+      console.log('\n--- Retry', attempt, 'of', MAX_ATTEMPTS, '---');
+      await sleep(RETRY_DELAY_MS);
+    }
+    try {
+      const result = await testWebSocket();
+      return result;
+    } catch (err) {
+      lastError = err;
+      console.error('\n✗ Attempt', attempt, 'failed:', err.message);
+      if (attempt < MAX_ATTEMPTS) {
+        console.log('Retrying in', RETRY_DELAY_MS / 1000, 's...');
+      }
+    }
+  }
+  throw lastError;
+}
+
+runWithRetries()
   .then((result) => {
     const responseTime = typeof result === 'object' && result.responseTime != null ? result.responseTime : 0;
     console.log('\n✓ SUCCESS:', typeof result === 'object' ? result.message : result);
@@ -123,7 +150,7 @@ testWebSocket()
     process.exit(0);
   })
   .catch((error) => {
-    console.error('\n✗ FAILED:', error.message);
+    console.error('\n✗ FAILED after', MAX_ATTEMPTS, 'attempts. Last error:', error.message);
     writeResultFile('down', 0, 0);
     process.exit(1);
   });

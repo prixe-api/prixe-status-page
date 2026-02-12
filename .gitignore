@@ -32,4 +32,7 @@ npm-debug.log*
 
 # WebSocket test result (workflow only)
 websocket-result.json
+
+# First run history (workflow only, for retry merge)
+history_first_run/
 to-do.md

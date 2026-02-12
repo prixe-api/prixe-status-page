@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: '20'
 
-      # Step 1: Check uptime for all endpoints
-      - name: "Step 1/9: Check Uptime"
+      # Step 1: Check uptime (1st run)
+      - name: "Step 1/12: Check Uptime (1st run)"
         uses: upptime/uptime-monitor@master
         with:
           command: "update"
@@ -35,8 +35,27 @@ jobs:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
-      # Step 2: Test WebSocket connection (does not block workflow on failure)
-      - name: "Step 2/9: Test WebSocket"
+      - name: "Step 2/12: Save first run history"
+        run: |
+          mkdir -p history_first_run
+          cp history/*.yml history_first_run/ 2>/dev/null || true
+
+      - name: "Step 3/12: Check Uptime (2nd run)"
+        uses: upptime/uptime-monitor@master
+        with:
+          command: "update"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
+          PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+
+      - name: "Step 4/12: Merge history (down only if both runs failed)"
+        run: node .github/scripts/merge-history-retry.js
+        env:
+          HISTORY_FIRST_RUN_DIR: ${{ github.workspace }}/history_first_run
+
+      # Step 5: Test WebSocket connection (does not block workflow on failure)
+      - name: "Step 5/12: Test WebSocket"
         run: |
           npm install ws
           node .github/scripts/test-websocket.js
@@ -47,13 +66,13 @@ jobs:
         continue-on-error: true
 
       # Step 3: Update WebSocket history from script result
-      - name: "Step 3/9: Update WebSocket History"
+      - name: "Step 6/12: Update WebSocket History"
         run: node .github/scripts/update-websocket-history.js
         env:
           WEBSOCKET_RESULT_FILE: ${{ github.workspace }}/websocket-result.json
 
-      # Step 4: Record response times
-      - name: "Step 4/9: Record Response Times"
+      # Step 7: Record response times
+      - name: "Step 7/12: Record Response Times"
         uses: upptime/uptime-monitor@master
         with:
           command: "response-time"
@@ -62,8 +81,8 @@ jobs:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
-      # Step 5: Generate graphs
-      - name: "Step 5/9: Generate Graphs"
+      # Step 8: Generate graphs
+      - name: "Step 8/12: Generate Graphs"
         uses: upptime/uptime-monitor@master
         with:
           command: "graphs"
@@ -72,8 +91,8 @@ jobs:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
-      # Step 6: Update summary
-      - name: "Step 6/9: Update Summary"
+      # Step 9: Update summary
+      - name: "Step 9/12: Update Summary"
         uses: upptime/uptime-monitor@master
         with:
           command: "summary"
@@ -82,8 +101,8 @@ jobs:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
-      # Step 7: Build static site
-      - name: "Step 7/9: Build Static Site"
+      # Step 10: Build static site
+      - name: "Step 10/12: Build Static Site"
         uses: upptime/uptime-monitor@master
         with:
           command: "site"
@@ -92,14 +111,14 @@ jobs:
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
 
-      # Step 8: Apply custom theme
-      - name: "Step 8/9: Apply Custom Theme"
+      # Step 11: Apply custom theme
+      - name: "Step 11/12: Apply Custom Theme"
         run: |
           cp -f custom-theme/global.css ./site/__sapper__/export/global.css
           cp -rf custom-theme/themes/* ./site/__sapper__/export/themes/
 
-      # Step 9: Deploy to GitHub Pages
-      - name: "Step 9/9: Deploy to GitHub Pages"
+      # Step 12: Deploy to GitHub Pages
+      - name: "Step 12/12: Deploy to GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
