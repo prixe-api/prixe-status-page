@@ -31,32 +31,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_PAT || github.token }}
-      - name: Check endpoint status (1st run)
+      - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "update"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
-      - name: Save first run history
-        run: |
-          mkdir -p history_first_run
-          cp history/*.yml history_first_run/ 2>/dev/null || true
-      - name: Check endpoint status (2nd run)
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "update"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
-      - name: Merge history (down only if both runs failed)
-        run: node .github/scripts/merge-history-retry.js
-        env:
-          HISTORY_FIRST_RUN_DIR: ${{ github.workspace }}/history_first_run
-      - name: Update summary
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "summary"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
