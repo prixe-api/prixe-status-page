@@ -557,3 +557,8 @@ article[class*="graph"] canvas,
 article[class*="graph"] svg {
   display: none !important;
 }
+
+/* Hide Past Incidents section on home page */
+main > section:last-of-type {
+  display: none !important;
+}
