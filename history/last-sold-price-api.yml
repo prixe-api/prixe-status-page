@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/last_sold
-status: up
-code: 200
-responseTime: 94
-lastUpdated: 2026-03-17T21:42:30.149Z
+status: degraded
+code: 504
+responseTime: 29011
+lastUpdated: 2026-03-17T22:41:04.774Z
 startTime: 2026-01-31T18:35:36.556Z
 generator: Upptime <https://github.com/upptime/upptime>
