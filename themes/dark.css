@@ -1,0 +1,63 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #818cf8;
+  --primary-hover: #6366f1;
+  --secondary-color: #94a3b8;
+  --accent-color: #f472b6;
+  
+  /* Background Colors */
+  --body-background-color: #0f172a;
+  --secondary-background: #1e293b;
+  --card-background-color: #1e293b;
+  --nav-background-color: #1e293b;
+  
+  /* Text Colors */
+  --body-text-color: #f1f5f9;
+  --text-light: #94a3b8;
+  
+  /* Border Colors */
+  --border-color: #334155;
+  --card-border-color: #334155;
+  --nav-border-bottom-color: #334155;
+  --nav-current-border-bottom-color: #818cf8;
+  
+  /* Status Colors */
+  --down-border-left-color: #f87171;
+  --down-background-color: #450a0a;
+  --degraded-border-left-color: #fbbf24;
+  --degraded-background-color: #451a03;
+  --up-border-left-color: #34d399;
+  --up-background-color: #052e16;
+  
+  /* Tag Colors */
+  --tag-color: #0f172a;
+  --tag-up-background-color: #34d399;
+  --tag-down-background-color: #f87171;
+  --tag-degraded-background-color: #fbbf24;
+  
+  /* UI Colors */
+  --change-background-color: #78350f;
+  --error-button-border-color: #818cf8;
+  --error-button-background-color: #818cf8;
+  --error-button-color: #0f172a;
+  --submit-button-border-color: #818cf8;
+  --submit-button-background-color: #818cf8;
+  --submit-button-color: #0f172a;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  
+  /* Graph */
+  --graph-opacity: 0.9;
+  --graph-filter: none;
+  
+  /* Transition */
+  --transition: all 0.3s ease;
+}
