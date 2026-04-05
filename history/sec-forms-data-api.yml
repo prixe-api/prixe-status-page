@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/forms
-status: down
-code: 504
-responseTime: 29069
-lastUpdated: 2026-04-04T23:46:16.609Z
+status: up
+code: 200
+responseTime: 303
+lastUpdated: 2026-04-05T01:18:08.973Z
 startTime: 2026-01-31T18:35:48.665Z
 generator: Upptime <https://github.com/upptime/upptime>
