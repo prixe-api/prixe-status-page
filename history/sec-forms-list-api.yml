@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/forms?ticker=AAPL
-status: degraded
-code: 504
-responseTime: 29006
-lastUpdated: 2026-04-15T14:29:36.027Z
+status: up
+code: 200
+responseTime: 358
+lastUpdated: 2026-04-15T15:09:42.606Z
 startTime: 2026-01-31T18:35:47.830Z
 generator: Upptime <https://github.com/upptime/upptime>
