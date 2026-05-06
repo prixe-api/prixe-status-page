@@ -426,19 +426,19 @@
     "url": "https://api.prixe.io/api/politicians/executive_disclosures",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "politicians-executive-disclosures-api",
-    "status": "degraded",
-    "uptime": "46.32%",
-    "uptimeDay": "46.32%",
-    "uptimeWeek": "46.32%",
-    "uptimeMonth": "46.32%",
-    "uptimeYear": "46.32%",
-    "time": 29240,
-    "timeDay": 29240,
-    "timeWeek": 29240,
-    "timeMonth": 29240,
-    "timeYear": 29240,
+    "status": "up",
+    "uptime": "8.00%",
+    "uptimeDay": "8.00%",
+    "uptimeWeek": "8.00%",
+    "uptimeMonth": "8.00%",
+    "uptimeYear": "8.00%",
+    "time": 18143,
+    "timeDay": 18143,
+    "timeWeek": 18143,
+    "timeMonth": 18143,
+    "timeYear": 18143,
     "dailyMinutesDown": {
-      "2026-05-06": 2
+      "2026-05-06": 29
     }
   }
 ]
