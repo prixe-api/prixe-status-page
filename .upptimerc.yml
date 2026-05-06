@@ -135,6 +135,62 @@ sites:
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
+  # Politicians API - Paginated list of Congressional transactions
+  - name: Politicians API
+    url: https://api.prixe.io/api/politicians
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"year": 2024, "ticker": "AAPL", "limit": 50, "offset": 0}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Politicians List API - Index of politicians who filed in a given year
+  - name: Politicians List API
+    url: https://api.prixe.io/api/politicians/list
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"year": 2024, "chamber": "senate", "limit": 50, "offset": 0}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Politicians Holdings API - Net trading activity for one politician
+  - name: Politicians Holdings API
+    url: https://api.prixe.io/api/politicians/holdings
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"politician": "pelosi", "year": 2024, "limit": 50, "offset": 0}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Politicians Executive Disclosures API - White House OGE Form 278e disclosures
+  - name: Politicians Executive Disclosures API
+    url: https://api.prixe.io/api/politicians/executive_disclosures
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"limit": 50, "offset": 0}'
+    expectedStatusCodes:
+      - 200
+      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
 # =============================================================================
 # STATUS WEBSITE CONFIGURATION
 # =============================================================================
