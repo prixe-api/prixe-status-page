@@ -12,7 +12,7 @@
     "uptimeYear": "99.09%",
     "time": 376,
     "timeDay": 216,
-    "timeWeek": 191,
+    "timeWeek": 190,
     "timeMonth": 191,
     "timeYear": 376,
     "dailyMinutesDown": {
@@ -29,15 +29,15 @@
     "url": "https://api.prixe.io/api/search",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "search-api",
-    "status": "down",
-    "uptime": "98.04%",
-    "uptimeDay": "92.70%",
-    "uptimeWeek": "98.96%",
-    "uptimeMonth": "99.76%",
-    "uptimeYear": "98.04%",
+    "status": "up",
+    "uptime": "98.01%",
+    "uptimeDay": "89.65%",
+    "uptimeWeek": "98.52%",
+    "uptimeMonth": "99.66%",
+    "uptimeYear": "98.01%",
     "time": 712,
-    "timeDay": 1326,
-    "timeWeek": 673,
+    "timeDay": 1261,
+    "timeWeek": 670,
     "timeMonth": 556,
     "timeYear": 712,
     "dailyMinutesDown": {
@@ -74,7 +74,7 @@
       "2026-04-20": 58,
       "2026-04-24": 19,
       "2026-04-27": 27,
-      "2026-05-31": 105
+      "2026-05-31": 149
     }
   },
   {
@@ -82,16 +82,16 @@
     "url": "https://api.prixe.io/api/last_sold",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "last-sold-price-api",
-    "status": "down",
-    "uptime": "98.20%",
-    "uptimeDay": "92.72%",
-    "uptimeWeek": "98.96%",
-    "uptimeMonth": "99.37%",
-    "uptimeYear": "98.20%",
+    "status": "up",
+    "uptime": "98.18%",
+    "uptimeDay": "89.68%",
+    "uptimeWeek": "98.53%",
+    "uptimeMonth": "99.27%",
+    "uptimeYear": "98.18%",
     "time": 333,
-    "timeDay": 137,
-    "timeWeek": 181,
-    "timeMonth": 360,
+    "timeDay": 147,
+    "timeWeek": 182,
+    "timeMonth": 361,
     "timeYear": 333,
     "dailyMinutesDown": {
       "2026-02-10": 57,
@@ -120,7 +120,7 @@
       "2026-04-20": 58,
       "2026-04-24": 19,
       "2026-05-19": 173,
-      "2026-05-31": 105
+      "2026-05-31": 149
     }
   },
   {
@@ -128,15 +128,15 @@
     "url": "https://api.prixe.io/api/price",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "historical-price-api",
-    "status": "down",
-    "uptime": "93.32%",
-    "uptimeDay": "92.74%",
-    "uptimeWeek": "98.96%",
-    "uptimeMonth": "99.76%",
-    "uptimeYear": "93.32%",
+    "status": "up",
+    "uptime": "93.30%",
+    "uptimeDay": "89.70%",
+    "uptimeWeek": "98.53%",
+    "uptimeMonth": "99.66%",
+    "uptimeYear": "93.30%",
     "time": 324,
-    "timeDay": 256,
-    "timeWeek": 347,
+    "timeDay": 259,
+    "timeWeek": 346,
     "timeMonth": 274,
     "timeYear": 324,
     "dailyMinutesDown": {
@@ -169,7 +169,7 @@
       "2026-04-07": 50,
       "2026-04-19": 71,
       "2026-04-20": 17,
-      "2026-05-31": 105
+      "2026-05-31": 149
     }
   },
   {
@@ -177,16 +177,16 @@
     "url": "https://api.prixe.io/api/stats",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "market-stats-api",
-    "status": "down",
-    "uptime": "98.15%",
-    "uptimeDay": "92.76%",
-    "uptimeWeek": "98.49%",
-    "uptimeMonth": "99.65%",
-    "uptimeYear": "98.15%",
+    "status": "up",
+    "uptime": "98.12%",
+    "uptimeDay": "89.73%",
+    "uptimeWeek": "98.06%",
+    "uptimeMonth": "99.55%",
+    "uptimeYear": "98.12%",
     "time": 361,
-    "timeDay": 242,
+    "timeDay": 253,
     "timeWeek": 580,
-    "timeMonth": 358,
+    "timeMonth": 359,
     "timeYear": 361,
     "dailyMinutesDown": {
       "2026-02-07": 390,
@@ -216,7 +216,7 @@
       "2026-04-19": 71,
       "2026-04-20": 17,
       "2026-05-24": 48,
-      "2026-05-31": 105
+      "2026-05-31": 148
     }
   },
   {
@@ -232,8 +232,8 @@
     "uptimeYear": "98.57%",
     "time": 485,
     "timeDay": 2568,
-    "timeWeek": 764,
-    "timeMonth": 287,
+    "timeWeek": 773,
+    "timeMonth": 288,
     "timeYear": 485,
     "dailyMinutesDown": {
       "2026-02-12": 66,
@@ -271,7 +271,7 @@
     "uptimeYear": "98.65%",
     "time": 393,
     "timeDay": 524,
-    "timeWeek": 542,
+    "timeWeek": 541,
     "timeMonth": 517,
     "timeYear": 393,
     "dailyMinutesDown": {
@@ -303,15 +303,15 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "sec-forms-data-api",
     "status": "up",
-    "uptime": "98.56%",
+    "uptime": "98.57%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.56%",
+    "uptimeYear": "98.57%",
     "time": 320,
     "timeDay": 246,
-    "timeWeek": 259,
-    "timeMonth": 219,
+    "timeWeek": 258,
+    "timeMonth": 218,
     "timeYear": 320,
     "dailyMinutesDown": {
       "2026-02-10": 57,
@@ -348,7 +348,7 @@
     "uptimeYear": "98.62%",
     "time": 205,
     "timeDay": 144,
-    "timeWeek": 163,
+    "timeWeek": 161,
     "timeMonth": 134,
     "timeYear": 205,
     "dailyMinutesDown": {
@@ -386,7 +386,7 @@
     "uptimeYear": "100.00%",
     "time": 202,
     "timeDay": 179,
-    "timeWeek": 208,
+    "timeWeek": 207,
     "timeMonth": 202,
     "timeYear": 202,
     "dailyMinutesDown": {}
@@ -404,7 +404,7 @@
     "uptimeYear": "100.00%",
     "time": 134,
     "timeDay": 125,
-    "timeWeek": 143,
+    "timeWeek": 141,
     "timeMonth": 134,
     "timeYear": 134,
     "dailyMinutesDown": {}
@@ -440,7 +440,7 @@
     "uptimeYear": "99.92%",
     "time": 7163,
     "timeDay": 6978,
-    "timeWeek": 7031,
+    "timeWeek": 7030,
     "timeMonth": 7163,
     "timeYear": 7163,
     "dailyMinutesDown": {
