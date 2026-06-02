@@ -26,7 +26,7 @@ jobs:
           node-version: '20'
 
       # Step 1: Check uptime (1st run)
-      - name: "Step 1/12: Check Uptime (1st run)"
+      - name: "Step 1/18: Check Uptime (1st run)"
         uses: upptime/uptime-monitor@master
         with:
           command: "update"
@@ -34,13 +34,14 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      - name: "Step 2/12: Save first run history"
+      - name: "Step 2/18: Save first run history"
         run: |
           mkdir -p history_first_run
           cp history/*.yml history_first_run/ 2>/dev/null || true
 
-      - name: "Step 3/12: Check Uptime (2nd run)"
+      - name: "Step 3/18: Check Uptime (2nd run)"
         uses: upptime/uptime-monitor@master
         with:
           command: "update"
@@ -48,14 +49,15 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      - name: "Step 4/12: Merge history (down only if both runs failed)"
+      - name: "Step 4/18: Merge history (down only if both runs failed)"
         run: node .github/scripts/merge-history-retry.js
         env:
           HISTORY_FIRST_RUN_DIR: ${{ github.workspace }}/history_first_run
 
       # Step 5: Test WebSocket connection (does not block workflow on failure)
-      - name: "Step 5/12: Test WebSocket"
+      - name: "Step 5/18: Test WebSocket"
         run: |
           npm install ws
           node .github/scripts/test-websocket.js
@@ -65,14 +67,62 @@ jobs:
           WEBSOCKET_RESULT_FILE: ${{ github.workspace }}/websocket-result.json
         continue-on-error: true
 
-      # Step 3: Update WebSocket history from script result
-      - name: "Step 6/12: Update WebSocket History"
+      # Step 6: Update WebSocket history from script result
+      - name: "Step 6/18: Update WebSocket History"
         run: node .github/scripts/update-websocket-history.js
         env:
           WEBSOCKET_RESULT_FILE: ${{ github.workspace }}/websocket-result.json
 
-      # Step 7: Record response times
-      - name: "Step 7/12: Record Response Times"
+      # Step 7: Test Nasdaq Streaming WebSocket (Pro+/Master Key only)
+      - name: "Step 7/18: Test Nasdaq WebSocket"
+        run: |
+          npm install ws
+          node .github/scripts/test-nasdaq-websocket.js
+        env:
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
+          NASDAQ_WS_RESULT_FILE: ${{ github.workspace }}/nasdaq-ws-result.json
+        continue-on-error: true
+
+      # Step 8: Update Nasdaq WebSocket history from script result
+      - name: "Step 8/18: Update Nasdaq WebSocket History"
+        run: node .github/scripts/update-nasdaq-websocket-history.js
+        env:
+          NASDAQ_WS_RESULT_FILE: ${{ github.workspace }}/nasdaq-ws-result.json
+
+      # Step 9: Test Crypto Streaming WebSocket (Pro+ only)
+      - name: "Step 9/18: Test Crypto WebSocket"
+        run: |
+          npm install ws
+          node .github/scripts/test-crypto-websocket.js
+        env:
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
+          CRYPTO_WS_RESULT_FILE: ${{ github.workspace }}/crypto-ws-result.json
+        continue-on-error: true
+
+      # Step 10: Update Crypto WebSocket history from script result
+      - name: "Step 10/18: Update Crypto WebSocket History"
+        run: node .github/scripts/update-crypto-websocket-history.js
+        env:
+          CRYPTO_WS_RESULT_FILE: ${{ github.workspace }}/crypto-ws-result.json
+
+      # Step 11: Test Order Book WebSocket (Pro+ only)
+      - name: "Step 11/18: Test Order Book WebSocket"
+        run: |
+          npm install ws
+          node .github/scripts/test-order-book-websocket.js
+        env:
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
+          ORDER_BOOK_WS_RESULT_FILE: ${{ github.workspace }}/order-book-ws-result.json
+        continue-on-error: true
+
+      # Step 12: Update Order Book WebSocket history from script result
+      - name: "Step 12/18: Update Order Book WebSocket History"
+        run: node .github/scripts/update-order-book-websocket-history.js
+        env:
+          ORDER_BOOK_WS_RESULT_FILE: ${{ github.workspace }}/order-book-ws-result.json
+
+      # Step 13: Record response times
+      - name: "Step 13/18: Record Response Times"
         uses: upptime/uptime-monitor@master
         with:
           command: "response-time"
@@ -80,9 +130,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      # Step 8: Generate graphs
-      - name: "Step 8/12: Generate Graphs"
+      # Step 14: Generate graphs
+      - name: "Step 14/18: Generate Graphs"
         uses: upptime/uptime-monitor@master
         with:
           command: "graphs"
@@ -90,9 +141,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      # Step 9: Update summary
-      - name: "Step 9/12: Update Summary"
+      # Step 15: Update summary
+      - name: "Step 15/18: Update Summary"
         uses: upptime/uptime-monitor@master
         with:
           command: "summary"
@@ -100,9 +152,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      # Step 10: Build static site
-      - name: "Step 10/12: Build Static Site"
+      # Step 16: Build static site
+      - name: "Step 16/18: Build Static Site"
         uses: upptime/uptime-monitor@master
         with:
           command: "site"
@@ -110,15 +163,16 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           PRIXE_API_KEY: ${{ secrets.PRIXE_API_KEY }}
           PRIXE_PRO_API_KEY: ${{ secrets.PRIXE_PRO_API_KEY }}
+          PRIXE_PRO_PLUS_API_KEY: ${{ secrets.PRIXE_PRO_PLUS_API_KEY }}
 
-      # Step 11: Apply custom theme
-      - name: "Step 11/12: Apply Custom Theme"
+      # Step 17: Apply custom theme
+      - name: "Step 17/18: Apply Custom Theme"
         run: |
           cp -f custom-theme/global.css ./site/__sapper__/export/global.css
           cp -rf custom-theme/themes/* ./site/__sapper__/export/themes/
 
-      # Step 12: Deploy to GitHub Pages
-      - name: "Step 12/12: Deploy to GitHub Pages"
+      # Step 18: Deploy to GitHub Pages
+      - name: "Step 18/18: Deploy to GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}

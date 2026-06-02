@@ -68,6 +68,19 @@ sites:
     maxResponseTime: 20000
     icon: https://prixe.io/static/images/prixe.png
 
+  # Stock Splits API (Pro+ Feature) - split calendar with effective dates and ratios
+  - name: Stock Splits API
+    url: https://api.prixe.io/api/splits
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
   # Market Statistics API - Tests market data endpoint
   - name: Market Stats API
     url: https://api.prixe.io/api/stats
@@ -95,15 +108,27 @@ sites:
     maxResponseTime: 40000
     icon: https://prixe.io/static/images/prixe.png
 
+  # FRED Economic Data API - Federal Reserve economic data (all plans / free tier)
+  - name: FRED Economic Data API
+    url: https://api.prixe.io/api/fred
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"series": ["DGS10", "DGS2"], "start_date": "2024-01-01"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
   # SEC Forms API (GET) - Available SEC Forms (Pro+ Feature)
   - name: SEC Forms List API
     url: https://api.prixe.io/api/forms?ticker=AAPL
     method: GET
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -112,12 +137,11 @@ sites:
     url: https://api.prixe.io/api/forms
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"ticker": "AAPL", "form": "10-K", "year": 2024}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 40000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -126,12 +150,11 @@ sites:
     url: https://api.prixe.io/api/board_members
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"ticker": "AAPL", "articles": false}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -140,12 +163,11 @@ sites:
     url: https://api.prixe.io/api/politicians
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"year": 2024, "ticker": "AAPL", "limit": 50, "offset": 0}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -154,12 +176,11 @@ sites:
     url: https://api.prixe.io/api/politicians/list
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"year": 2024, "chamber": "senate", "limit": 50, "offset": 0}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -168,12 +189,11 @@ sites:
     url: https://api.prixe.io/api/politicians/holdings
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"politician": "pelosi", "year": 2024, "limit": 50, "offset": 0}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
@@ -182,12 +202,148 @@ sites:
     url: https://api.prixe.io/api/politicians/executive_disclosures
     method: POST
     headers:
-      - "Authorization: Bearer $PRIXE_API_KEY"
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
       - "Content-Type: application/json"
     body: '{"limit": 50, "offset": 0}'
     expectedStatusCodes:
       - 200
-      - 401  # May return 401 if not Pro+ subscription
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # IPO Calendar API (Pro+ Feature) - monthly IPO calendar (priced/filed/upcoming/withdrawn)
+  - name: IPO Calendar API
+    url: https://api.prixe.io/api/ipo_calendar
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"month": "2025-05"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Snapshot API (Pro+) - top-of-book snapshot for one or more tickers.
+  # Uses PRIXE_PRO_PLUS_API_KEY; 200-only so a 401 (bad/expired/under-tier key) alerts.
+  - name: Nasdaq Snapshot API
+    url: https://api.prixe.io/api/nasdaq/snapshot?tickers=AAPL,MSFT&category=US_STOCK
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Quotes API (Pro+) - best bid/ask for a single ticker
+  - name: Nasdaq Quotes API
+    url: https://api.prixe.io/api/nasdaq/quotes?ticker=AAPL&category=US_STOCK
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Tick API (Pro+) - recent trade prints
+  - name: Nasdaq Tick API
+    url: https://api.prixe.io/api/nasdaq/tick?ticker=AAPL&category=US_STOCK&count=10
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Bars API (Pro+) - historical OHLCV bars, single ticker
+  - name: Nasdaq Bars API
+    url: https://api.prixe.io/api/nasdaq/bars?ticker=AAPL&category=US_STOCK&timespan=D&count=10
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Batch Bars API (Pro+) - historical OHLCV bars, up to 20 tickers
+  - name: Nasdaq Batch Bars API
+    url: https://api.prixe.io/api/nasdaq/batch_bars
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"tickers": ["AAPL", "MSFT", "NVDA"], "category": "US_STOCK", "timespan": "D", "count": 3}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Crypto Market Data API (Pro+ Feature) - real-time snapshot for crypto pairs (USD-quoted)
+  - name: Crypto Market Data API
+    url: https://api.prixe.io/api/crypto
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"type": "snapshot", "tickers": ["BTC", "ETH"]}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Crypto Supported Pairs API (Pro+ Feature) - list of supported crypto pairs
+  - name: Crypto Pairs List API
+    url: https://api.prixe.io/api/crypto/list
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Nasdaq Streaming WebSocket (Pro+) - real-time market data.
+  # Checked by .github/scripts/test-nasdaq-websocket.js (connect + subscribe + verify),
+  # not HTTP GET. Result written by .github/scripts/update-nasdaq-websocket-history.js.
+  - name: Nasdaq Streaming WebSocket
+    url: https://ws.prixe.io/nasdaq
+    method: GET
+    expectedStatusCodes:
+      - 426
+      - 400
+      - 200
+      - 401
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Crypto Streaming WebSocket (Pro+ Feature) - real-time crypto market data.
+  # Checked by .github/scripts/test-crypto-websocket.js (connect + subscribe + verify),
+  # not HTTP GET. Result written by .github/scripts/update-crypto-websocket-history.js.
+  - name: Crypto Streaming WebSocket
+    url: https://ws.prixe.io/crypto
+    method: GET
+    expectedStatusCodes:
+      - 426
+      - 400
+      - 200
+      - 401
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Order Book WebSocket (Pro+ Feature) - real-time L2 order book depth for crypto.
+  # Checked by .github/scripts/test-order-book-websocket.js (connect + subscribe + verify),
+  # not HTTP GET. Result written by .github/scripts/update-order-book-websocket-history.js.
+  - name: Order Book WebSocket
+    url: https://ws.prixe.io/order_book
+    method: GET
+    expectedStatusCodes:
+      - 426
+      - 400
+      - 200
+      - 401
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
