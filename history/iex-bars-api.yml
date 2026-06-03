@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/iex/bars
-status: down
-code: 500
-responseTime: 11209
-lastUpdated: 2026-06-03T04:59:19.153Z
+status: up
+code: 200
+responseTime: 102
+lastUpdated: 2026-06-03T09:30:51.237Z
 startTime: 2026-06-03T03:12:41.360Z
 generator: Upptime <https://github.com/upptime/upptime>
