@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/sip/bars
-status: down
-code: 500
-responseTime: 10981
-lastUpdated: 2026-06-03T05:02:21.574Z
+status: up
+code: 200
+responseTime: 87
+lastUpdated: 2026-06-03T09:31:01.544Z
 startTime: 2026-06-03T03:15:49.665Z
 generator: Upptime <https://github.com/upptime/upptime>
