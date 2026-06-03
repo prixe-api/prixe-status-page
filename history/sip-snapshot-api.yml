@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/sip/snapshot
-status: down
-code: 500
-responseTime: 11069
-lastUpdated: 2026-06-03T05:04:37.651Z
+status: up
+code: 200
+responseTime: 76
+lastUpdated: 2026-06-03T09:31:09.887Z
 startTime: 2026-06-03T03:18:10.972Z
 generator: Upptime <https://github.com/upptime/upptime>
