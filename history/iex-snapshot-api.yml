@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/iex/snapshot
-status: down
-code: 500
-responseTime: 10914
-lastUpdated: 2026-06-03T05:01:35.891Z
+status: up
+code: 200
+responseTime: 86
+lastUpdated: 2026-06-03T09:30:58.869Z
 startTime: 2026-06-03T03:15:01.399Z
 generator: Upptime <https://github.com/upptime/upptime>
