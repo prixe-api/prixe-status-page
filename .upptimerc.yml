@@ -292,6 +292,215 @@ sites:
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 
+  # ===========================================================================
+  # ALPACA MARKET DATA (Pro+) - IEX & SIP feeds. IEX = free Alpaca feed,
+  # SIP = full consolidated tape. All gated to Pro+ on Prixe's side.
+  # ===========================================================================
+
+  # IEX Bars API (Pro+ Feature) - Alpaca IEX-feed historical daily OHLC bars for equities
+  - name: IEX Bars API
+    url: https://api.prixe.io/api/iex/bars
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # IEX Quotes API (Pro+ Feature) - latest IEX-feed NBBO quote for a liquid equity
+  - name: IEX Quotes API
+    url: https://api.prixe.io/api/iex/quotes
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "latest": true}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # IEX Trades API (Pro+ Feature) - latest Alpaca IEX-feed trade for an equity (feed=iex)
+  - name: IEX Trades API
+    url: https://api.prixe.io/api/iex/trades
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "latest": true}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # IEX Snapshot API (Pro+ Feature) - Alpaca IEX-feed snapshot (latest trade/quote, minute/daily/prev-daily bars) for equities
+  - name: IEX Snapshot API
+    url: https://api.prixe.io/api/iex/snapshot
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Bars API (Pro+ Feature) - Alpaca SIP-feed (full consolidated tape) historical OHLC bars for equities
+  - name: SIP Bars API
+    url: https://api.prixe.io/api/sip/bars
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "timeframe": "1Day", "limit": 5}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Quotes API (Pro+ Feature) - Alpaca SIP consolidated-tape latest quote for equities
+  - name: SIP Quotes API
+    url: https://api.prixe.io/api/sip/quotes
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "latest": true}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Trades API (Pro+ Feature) - Alpaca SIP-feed (consolidated tape) latest trade print for an equity
+  - name: SIP Trades API
+    url: https://api.prixe.io/api/sip/trades
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL", "latest": true}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Snapshot API (Pro+ Feature) - Alpaca SIP-feed snapshot (latest trade/quote + minute/daily/prev-daily bars) for one or more equities
+  - name: SIP Snapshot API
+    url: https://api.prixe.io/api/sip/snapshot
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Movers API (Pro+) - top gainers/losers from the consolidated tape (Alpaca screener)
+  - name: SIP Movers API
+    url: https://api.prixe.io/api/sip/movers?top=10
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SIP Most Actives API (Pro+) - Alpaca screener most-active symbols by volume/trades from the consolidated tape
+  - name: SIP Most Actives API
+    url: https://api.prixe.io/api/sip/most_actives?by=volume&top=10
+    method: GET
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 15000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Corporate Actions API (Pro+ Feature) - Alpaca splits/dividends/mergers/spin-offs for a symbol (trailing-year default range)
+  - name: Corporate Actions API
+    url: https://api.prixe.io/api/corporate_actions
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Options API (Pro+ Feature) - Alpaca option chain snapshot for an underlying (greeks, IV, latest trade/quote)
+  - name: Options API
+    url: https://api.prixe.io/api/options
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"type": "chain", "ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Dividends Calendar API (Pro+ Feature) - daily Nasdaq dividends calendar (ex-dividend dates)
+  - name: Dividends Calendar API
+    url: https://api.prixe.io/api/dividends_calendar
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Earnings Calendar API (Pro+ Feature) - daily Nasdaq earnings calendar (date defaults to today)
+  - name: Earnings Calendar API
+    url: https://api.prixe.io/api/earnings_calendar
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # Economic Calendar API (Pro+ Feature) - daily Nasdaq economic-events calendar (date defaults to today)
+  - name: Economic Calendar API
+    url: https://api.prixe.io/api/economic_calendar
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 20000
+    icon: https://prixe.io/static/images/prixe.png
+
+  # SEC Financials API (Pro+ Feature) - standardized fundamentals time series (annual + quarterly) from SEC Company Facts XBRL
+  - name: SEC Financials API
+    url: https://api.prixe.io/api/forms/financials
+    method: POST
+    headers:
+      - "Authorization: Bearer $PRIXE_PRO_PLUS_API_KEY"
+      - "Content-Type: application/json"
+    body: '{"ticker": "AAPL"}'
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 40000
+    icon: https://prixe.io/static/images/prixe.png
+
   # Nasdaq Streaming WebSocket (Pro+) - real-time market data.
   # Checked by .github/scripts/test-nasdaq-websocket.js (connect + subscribe + verify),
   # not HTTP GET. Result written by .github/scripts/update-nasdaq-websocket-history.js.
