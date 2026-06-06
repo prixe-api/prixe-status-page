@@ -1,10 +1,10 @@
 # Prixe API Status Page
 
-[![Uptime CI](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/workflows/Uptime%20CI/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/actions?query=workflow%3A%22Uptime+CI%22)
-[![Response Time CI](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/workflows/Response%20Time%20CI/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/actions?query=workflow%3A%22Response+Time+CI%22)
-[![Graphs CI](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/workflows/Graphs%20CI/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/actions?query=workflow%3A%22Graphs+CI%22)
-[![Static Site CI](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/workflows/Static%20Site%20CI/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/actions?query=workflow%3A%22Static+Site+CI%22)
-[![Summary CI](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/workflows/Summary%20CI/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/prixe-status-page/actions?query=workflow%3A%22Summary+CI%22)
+[![Uptime CI](https://github.com/prixe-api/prixe-status-page/workflows/Uptime%20CI/badge.svg)](https://github.com/prixe-api/prixe-status-page/actions/workflows/uptime.yml)
+[![Response Time CI](https://github.com/prixe-api/prixe-status-page/workflows/Response%20Time%20CI/badge.svg)](https://github.com/prixe-api/prixe-status-page/actions/workflows/response-time.yml)
+[![Graphs CI](https://github.com/prixe-api/prixe-status-page/workflows/Graphs%20CI/badge.svg)](https://github.com/prixe-api/prixe-status-page/actions/workflows/graphs.yml)
+[![Static Site CI](https://github.com/prixe-api/prixe-status-page/workflows/Static%20Site%20CI/badge.svg)](https://github.com/prixe-api/prixe-status-page/actions/workflows/site.yml)
+[![Summary CI](https://github.com/prixe-api/prixe-status-page/workflows/Summary%20CI/badge.svg)](https://github.com/prixe-api/prixe-status-page/actions/workflows/summary.yml)
 
 This repository contains the status page for the [Prixe Stock Data API](https://prixe.io), powered by [Upptime](https://github.com/upptime/upptime).
 
