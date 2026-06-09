@@ -26,6 +26,7 @@ sites:
       - 426
       - 400
       - 200
+      - 401
     maxResponseTime: 15000
     icon: https://prixe.io/static/images/prixe.png
 

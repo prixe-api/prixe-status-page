@@ -81,13 +81,40 @@ jobs:
           ORDER_BOOK_WS_RESULT_FILE: ${{ github.workspace }}/order-book-ws-result.json
 
       - name: Commit history updates
+        # One commit per history file, using Upptime's exact message format
+        # ("<emoji> <Name> is <up|down> (<code> in <ms> ms) [skip ci] [upptime]").
+        # Upptime's summary generator derives each site's current status by parsing
+        # the LATEST commit message of its history file, so a generic message like
+        # "chore(ws): update..." makes the summary fall back to "down" even when the
+        # file says status: up. See https://github.com/upptime/upptime summary action.
         run: |
           git config user.name "Upptime Bot"
           git config user.email "73812536+upptime-bot@users.noreply.github.com"
-          git add history/web-socket-server.yml history/nasdaq-streaming-web-socket.yml history/crypto-streaming-web-socket.yml history/order-book-web-socket.yml
-          if git diff --staged --quiet; then
-            echo "No history changes to commit."
-          else
-            git commit -m "chore(ws): update websocket history [skip ci]"
+
+          committed=0
+          commit_site() {
+            local file="$1" name="$2"
+            git add "$file"
+            if git diff --staged --quiet -- "$file"; then
+              echo "No change for $name"
+              return
+            fi
+            local status code rt emoji
+            status=$(grep '^status:' "$file" | awk '{print $2}')
+            code=$(grep '^code:' "$file" | awk '{print $2}')
+            rt=$(grep '^responseTime:' "$file" | awk '{print $2}')
+            if [ "$status" = "up" ]; then emoji="🟩"; else emoji="🟥"; fi
+            git commit -m "$emoji $name is $status ($code in $rt ms) [skip ci] [upptime]"
+            committed=1
+          }
+
+          commit_site history/web-socket-server.yml "WebSocket Server"
+          commit_site history/nasdaq-streaming-web-socket.yml "Nasdaq Streaming WebSocket"
+          commit_site history/crypto-streaming-web-socket.yml "Crypto Streaming WebSocket"
+          commit_site history/order-book-web-socket.yml "Order Book WebSocket"
+
+          if [ "$committed" -eq 1 ]; then
             git push
+          else
+            echo "No history changes to commit."
           fi
