@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/sip/most_actives?by=volume&top=10
 status: up
 code: 200
-responseTime: 368
-lastUpdated: 2026-06-13T20:19:06.380Z
+responseTime: 103
+lastUpdated: 2026-06-13T22:08:17.056Z
 startTime: 2026-06-03T03:19:45.991Z
 generator: Upptime <https://github.com/upptime/upptime>
