@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/earnings_calendar
-status: up
-code: 200
+status: down
+code: 400
 responseTime: 116
-lastUpdated: 2026-06-14T19:43:30.544Z
+lastUpdated: 2026-06-14T21:04:42.988Z
 startTime: 2026-06-03T03:22:57.205Z
 generator: Upptime <https://github.com/upptime/upptime>
