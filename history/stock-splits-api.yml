@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/splits
-status: up
-code: 200
-responseTime: 120
-lastUpdated: 2026-06-14T15:08:02.790Z
+status: down
+code: 400
+responseTime: 122
+lastUpdated: 2026-06-14T17:06:28.243Z
 startTime: 2026-06-02T00:25:07.586Z
 generator: Upptime <https://github.com/upptime/upptime>
