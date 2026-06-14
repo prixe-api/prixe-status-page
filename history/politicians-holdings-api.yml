@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/politicians/holdings
-status: up
-code: 200
-responseTime: 224
-lastUpdated: 2026-06-14T15:08:05.543Z
+status: down
+code: 400
+responseTime: 64
+lastUpdated: 2026-06-14T17:07:57.186Z
 startTime: 2026-05-06T02:54:52.244Z
 generator: Upptime <https://github.com/upptime/upptime>
