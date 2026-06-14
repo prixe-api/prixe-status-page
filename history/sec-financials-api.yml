@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/forms/financials
-status: up
-code: 200
-responseTime: 92
-lastUpdated: 2026-06-14T19:43:36.235Z
+status: down
+code: 400
+responseTime: 137
+lastUpdated: 2026-06-14T21:05:11.875Z
 startTime: 2026-06-03T03:24:32.489Z
 generator: Upptime <https://github.com/upptime/upptime>
