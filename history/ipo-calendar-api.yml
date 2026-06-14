@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/ipo_calendar
-status: up
-code: 200
-responseTime: 89
-lastUpdated: 2026-06-14T19:42:31.262Z
+status: down
+code: 400
+responseTime: 176
+lastUpdated: 2026-06-14T20:59:37.082Z
 startTime: 2026-06-02T00:25:35.790Z
 generator: Upptime <https://github.com/upptime/upptime>
