@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/politicians
-status: up
-code: 200
-responseTime: 155
-lastUpdated: 2026-06-14T19:42:13.148Z
+status: down
+code: 400
+responseTime: 139
+lastUpdated: 2026-06-14T20:58:38.873Z
 startTime: 2026-05-06T02:54:50.899Z
 generator: Upptime <https://github.com/upptime/upptime>
