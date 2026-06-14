@@ -11,7 +11,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.18%",
     "time": 371,
-    "timeDay": 406,
+    "timeDay": 397,
     "timeWeek": 362,
     "timeMonth": 240,
     "timeYear": 371,
@@ -35,11 +35,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "98.72%",
     "uptimeYear": "97.99%",
-    "time": 718,
-    "timeDay": 517,
-    "timeWeek": 523,
+    "time": 717,
+    "timeDay": 515,
+    "timeWeek": 524,
     "timeMonth": 669,
-    "timeYear": 718,
+    "timeYear": 717,
     "dailyMinutesDown": {
       "2026-02-02": 32,
       "2026-02-07": 24,
@@ -89,11 +89,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "98.33%",
     "uptimeYear": "98.14%",
-    "time": 344,
-    "timeDay": 169,
+    "time": 343,
+    "timeDay": 164,
     "timeWeek": 222,
-    "timeMonth": 542,
-    "timeYear": 344,
+    "timeMonth": 541,
+    "timeYear": 343,
     "dailyMinutesDown": {
       "2026-02-10": 57,
       "2026-02-12": 68,
@@ -137,9 +137,9 @@
     "uptimeMonth": "98.73%",
     "uptimeYear": "93.75%",
     "time": 336,
-    "timeDay": 182,
-    "timeWeek": 211,
-    "timeMonth": 408,
+    "timeDay": 183,
+    "timeWeek": 213,
+    "timeMonth": 406,
     "timeYear": 336,
     "dailyMinutesDown": {
       "2026-02-10": 57,
@@ -186,11 +186,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.63%",
     "uptimeYear": "97.63%",
-    "time": 944,
-    "timeDay": 1184,
-    "timeWeek": 623,
-    "timeMonth": 944,
-    "timeYear": 944,
+    "time": 942,
+    "timeDay": 1139,
+    "timeWeek": 633,
+    "timeMonth": 942,
+    "timeYear": 942,
     "dailyMinutesDown": {
       "2026-06-03": 410
     }
@@ -207,9 +207,9 @@
     "uptimeMonth": "98.62%",
     "uptimeYear": "98.09%",
     "time": 374,
-    "timeDay": 309,
-    "timeWeek": 280,
-    "timeMonth": 488,
+    "timeDay": 313,
+    "timeWeek": 282,
+    "timeMonth": 487,
     "timeYear": 374,
     "dailyMinutesDown": {
       "2026-02-07": 390,
@@ -254,11 +254,11 @@
     "uptimeWeek": "99.53%",
     "uptimeMonth": "98.96%",
     "uptimeYear": "98.48%",
-    "time": 521,
-    "timeDay": 847,
-    "timeWeek": 796,
-    "timeMonth": 702,
-    "timeYear": 521,
+    "time": 523,
+    "timeDay": 1171,
+    "timeWeek": 869,
+    "timeMonth": 717,
+    "timeYear": 523,
     "dailyMinutesDown": {
       "2026-02-12": 66,
       "2026-02-13": 65,
@@ -296,9 +296,9 @@
     "uptimeMonth": "99.07%",
     "uptimeYear": "98.57%",
     "time": 420,
-    "timeDay": 588,
-    "timeWeek": 582,
-    "timeMonth": 682,
+    "timeDay": 576,
+    "timeWeek": 583,
+    "timeMonth": 681,
     "timeYear": 420,
     "dailyMinutesDown": {
       "2026-02-11": 30,
@@ -330,15 +330,15 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "sec-forms-data-api",
     "status": "up",
-    "uptime": "98.49%",
+    "uptime": "98.50%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.07%",
-    "uptimeYear": "98.49%",
+    "uptimeYear": "98.50%",
     "time": 335,
-    "timeDay": 297,
-    "timeWeek": 257,
-    "timeMonth": 385,
+    "timeDay": 283,
+    "timeWeek": 258,
+    "timeMonth": 383,
     "timeYear": 335,
     "dailyMinutesDown": {
       "2026-02-10": 57,
@@ -375,8 +375,8 @@
     "uptimeMonth": "99.07%",
     "uptimeYear": "98.55%",
     "time": 221,
-    "timeDay": 213,
-    "timeWeek": 175,
+    "timeDay": 206,
+    "timeWeek": 177,
     "timeMonth": 289,
     "timeYear": 221,
     "dailyMinutesDown": {
@@ -414,9 +414,9 @@
     "uptimeMonth": "99.08%",
     "uptimeYear": "99.28%",
     "time": 307,
-    "timeDay": 225,
-    "timeWeek": 215,
-    "timeMonth": 340,
+    "timeDay": 212,
+    "timeWeek": 216,
+    "timeMonth": 339,
     "timeYear": 307,
     "dailyMinutesDown": {
       "2026-06-03": 405
@@ -433,11 +433,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.08%",
     "uptimeYear": "99.28%",
-    "time": 237,
-    "timeDay": 160,
-    "timeWeek": 144,
+    "time": 236,
+    "timeDay": 154,
+    "timeWeek": 145,
     "timeMonth": 270,
-    "timeYear": 237,
+    "timeYear": 236,
     "dailyMinutesDown": {
       "2026-06-03": 404
     }
@@ -454,7 +454,7 @@
     "uptimeMonth": "99.08%",
     "uptimeYear": "99.28%",
     "time": 274,
-    "timeDay": 194,
+    "timeDay": 188,
     "timeWeek": 193,
     "timeMonth": 307,
     "timeYear": 274,
@@ -473,11 +473,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.08%",
     "uptimeYear": "99.23%",
-    "time": 7174,
-    "timeDay": 7134,
-    "timeWeek": 7048,
-    "timeMonth": 7091,
-    "timeYear": 7174,
+    "time": 7172,
+    "timeDay": 7083,
+    "timeWeek": 7043,
+    "timeMonth": 7088,
+    "timeYear": 7172,
     "dailyMinutesDown": {
       "2026-05-06": 29,
       "2026-06-03": 403
@@ -494,11 +494,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.67%",
     "uptimeYear": "97.67%",
-    "time": 518,
-    "timeDay": 196,
-    "timeWeek": 157,
-    "timeMonth": 518,
-    "timeYear": 518,
+    "time": 514,
+    "timeDay": 188,
+    "timeWeek": 156,
+    "timeMonth": 514,
+    "timeYear": 514,
     "dailyMinutesDown": {
       "2026-06-03": 402
     }
@@ -514,11 +514,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.67%",
     "uptimeYear": "97.67%",
-    "time": 677,
-    "timeDay": 284,
+    "time": 672,
+    "timeDay": 271,
     "timeWeek": 261,
-    "timeMonth": 677,
-    "timeYear": 677,
+    "timeMonth": 672,
+    "timeYear": 672,
     "dailyMinutesDown": {
       "2026-06-03": 402
     }
@@ -534,11 +534,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.68%",
     "uptimeYear": "97.68%",
-    "time": 654,
-    "timeDay": 293,
-    "timeWeek": 290,
-    "timeMonth": 654,
-    "timeYear": 654,
+    "time": 648,
+    "timeDay": 276,
+    "timeWeek": 289,
+    "timeMonth": 648,
+    "timeYear": 648,
     "dailyMinutesDown": {
       "2026-06-03": 401
     }
@@ -554,11 +554,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.68%",
     "uptimeYear": "97.68%",
-    "time": 697,
-    "timeDay": 302,
-    "timeWeek": 342,
-    "timeMonth": 697,
-    "timeYear": 697,
+    "time": 692,
+    "timeDay": 288,
+    "timeWeek": 343,
+    "timeMonth": 692,
+    "timeYear": 692,
     "dailyMinutesDown": {
       "2026-06-03": 400
     }
@@ -574,11 +574,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.69%",
     "uptimeYear": "97.69%",
-    "time": 623,
-    "timeDay": 241,
-    "timeWeek": 255,
-    "timeMonth": 623,
-    "timeYear": 623,
+    "time": 620,
+    "timeDay": 256,
+    "timeWeek": 259,
+    "timeMonth": 620,
+    "timeYear": 620,
     "dailyMinutesDown": {
       "2026-06-03": 399
     }
@@ -594,11 +594,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.69%",
     "uptimeYear": "97.69%",
-    "time": 696,
-    "timeDay": 307,
-    "timeWeek": 290,
-    "timeMonth": 696,
-    "timeYear": 696,
+    "time": 692,
+    "timeDay": 305,
+    "timeWeek": 291,
+    "timeMonth": 692,
+    "timeYear": 692,
     "dailyMinutesDown": {
       "2026-06-03": 399
     }
@@ -609,16 +609,16 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "crypto-market-data-api",
     "status": "up",
-    "uptime": "97.69%",
+    "uptime": "97.70%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "97.69%",
-    "uptimeYear": "97.69%",
-    "time": 676,
-    "timeDay": 282,
+    "uptimeMonth": "97.70%",
+    "uptimeYear": "97.70%",
+    "time": 670,
+    "timeDay": 271,
     "timeWeek": 254,
-    "timeMonth": 676,
-    "timeYear": 676,
+    "timeMonth": 670,
+    "timeYear": 670,
     "dailyMinutesDown": {
       "2026-06-03": 398
     }
@@ -634,11 +634,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.70%",
     "uptimeYear": "97.70%",
-    "time": 592,
-    "timeDay": 275,
+    "time": 587,
+    "timeDay": 258,
     "timeWeek": 238,
-    "timeMonth": 592,
-    "timeYear": 592,
+    "timeMonth": 587,
+    "timeYear": 587,
     "dailyMinutesDown": {
       "2026-06-03": 397
     }
@@ -654,11 +654,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.59%",
     "uptimeYear": "97.59%",
-    "time": 562,
-    "timeDay": 283,
-    "timeWeek": 340,
-    "timeMonth": 562,
-    "timeYear": 562,
+    "time": 558,
+    "timeDay": 278,
+    "timeWeek": 343,
+    "timeMonth": 558,
+    "timeYear": 558,
     "dailyMinutesDown": {
       "2026-06-03": 377
     }
@@ -674,11 +674,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.59%",
     "uptimeYear": "97.59%",
-    "time": 456,
-    "timeDay": 195,
-    "timeWeek": 202,
-    "timeMonth": 456,
-    "timeYear": 456,
+    "time": 452,
+    "timeDay": 183,
+    "timeWeek": 199,
+    "timeMonth": 452,
+    "timeYear": 452,
     "dailyMinutesDown": {
       "2026-06-03": 377
     }
@@ -694,11 +694,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.60%",
     "uptimeYear": "97.60%",
-    "time": 464,
-    "timeDay": 181,
+    "time": 460,
+    "timeDay": 168,
     "timeWeek": 179,
-    "timeMonth": 464,
-    "timeYear": 464,
+    "timeMonth": 460,
+    "timeYear": 460,
     "dailyMinutesDown": {
       "2026-06-03": 376
     }
@@ -714,11 +714,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.60%",
     "uptimeYear": "97.60%",
-    "time": 486,
-    "timeDay": 191,
+    "time": 481,
+    "timeDay": 177,
     "timeWeek": 250,
-    "timeMonth": 486,
-    "timeYear": 486,
+    "timeMonth": 481,
+    "timeYear": 481,
     "dailyMinutesDown": {
       "2026-06-03": 375
     }
@@ -734,11 +734,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.61%",
     "uptimeYear": "97.61%",
-    "time": 505,
-    "timeDay": 350,
-    "timeWeek": 277,
-    "timeMonth": 505,
-    "timeYear": 505,
+    "time": 500,
+    "timeDay": 319,
+    "timeWeek": 276,
+    "timeMonth": 500,
+    "timeYear": 500,
     "dailyMinutesDown": {
       "2026-06-03": 374
     }
@@ -754,11 +754,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.61%",
     "uptimeYear": "97.61%",
-    "time": 446,
-    "timeDay": 211,
+    "time": 442,
+    "timeDay": 196,
     "timeWeek": 172,
-    "timeMonth": 446,
-    "timeYear": 446,
+    "timeMonth": 442,
+    "timeYear": 442,
     "dailyMinutesDown": {
       "2026-06-03": 374
     }
@@ -774,11 +774,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.62%",
     "uptimeYear": "97.62%",
-    "time": 463,
-    "timeDay": 201,
-    "timeWeek": 192,
-    "timeMonth": 463,
-    "timeYear": 463,
+    "time": 459,
+    "timeDay": 187,
+    "timeWeek": 193,
+    "timeMonth": 459,
+    "timeYear": 459,
     "dailyMinutesDown": {
       "2026-06-03": 373
     }
@@ -794,11 +794,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.62%",
     "uptimeYear": "97.62%",
-    "time": 466,
-    "timeDay": 253,
+    "time": 461,
+    "timeDay": 232,
     "timeWeek": 201,
-    "timeMonth": 466,
-    "timeYear": 466,
+    "timeMonth": 461,
+    "timeYear": 461,
     "dailyMinutesDown": {
       "2026-06-03": 372
     }
@@ -809,16 +809,16 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "sip-movers-api",
     "status": "up",
-    "uptime": "97.62%",
+    "uptime": "97.63%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "97.62%",
-    "uptimeYear": "97.62%",
-    "time": 453,
-    "timeDay": 212,
-    "timeWeek": 191,
-    "timeMonth": 453,
-    "timeYear": 453,
+    "uptimeMonth": "97.63%",
+    "uptimeYear": "97.63%",
+    "time": 449,
+    "timeDay": 195,
+    "timeWeek": 189,
+    "timeMonth": 449,
+    "timeYear": 449,
     "dailyMinutesDown": {
       "2026-06-03": 372
     }
@@ -834,11 +834,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.63%",
     "uptimeYear": "97.63%",
-    "time": 444,
-    "timeDay": 218,
+    "time": 440,
+    "timeDay": 204,
     "timeWeek": 170,
-    "timeMonth": 444,
-    "timeYear": 444,
+    "timeMonth": 440,
+    "timeYear": 440,
     "dailyMinutesDown": {
       "2026-06-03": 371
     }
@@ -849,16 +849,16 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "corporate-actions-api",
     "status": "up",
-    "uptime": "97.63%",
+    "uptime": "97.64%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "97.63%",
-    "uptimeYear": "97.63%",
-    "time": 497,
-    "timeDay": 213,
+    "uptimeMonth": "97.64%",
+    "uptimeYear": "97.64%",
+    "time": 492,
+    "timeDay": 200,
     "timeWeek": 233,
-    "timeMonth": 497,
-    "timeYear": 497,
+    "timeMonth": 492,
+    "timeYear": 492,
     "dailyMinutesDown": {
       "2026-06-03": 370
     }
@@ -874,11 +874,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.64%",
     "uptimeYear": "97.64%",
-    "time": 525,
-    "timeDay": 299,
+    "time": 520,
+    "timeDay": 276,
     "timeWeek": 239,
-    "timeMonth": 525,
-    "timeYear": 525,
+    "timeMonth": 520,
+    "timeYear": 520,
     "dailyMinutesDown": {
       "2026-06-03": 369
     }
@@ -889,16 +889,16 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "dividends-calendar-api",
     "status": "up",
-    "uptime": "97.64%",
+    "uptime": "97.65%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "97.64%",
-    "uptimeYear": "97.64%",
-    "time": 483,
-    "timeDay": 223,
-    "timeWeek": 207,
-    "timeMonth": 483,
-    "timeYear": 483,
+    "uptimeMonth": "97.65%",
+    "uptimeYear": "97.65%",
+    "time": 480,
+    "timeDay": 226,
+    "timeWeek": 210,
+    "timeMonth": 480,
+    "timeYear": 480,
     "dailyMinutesDown": {
       "2026-06-03": 369
     }
@@ -914,11 +914,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.65%",
     "uptimeYear": "97.65%",
-    "time": 474,
-    "timeDay": 257,
-    "timeWeek": 207,
-    "timeMonth": 474,
-    "timeYear": 474,
+    "time": 470,
+    "timeDay": 247,
+    "timeWeek": 209,
+    "timeMonth": 470,
+    "timeYear": 470,
     "dailyMinutesDown": {
       "2026-06-03": 368
     }
@@ -929,16 +929,16 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "economic-calendar-api",
     "status": "up",
-    "uptime": "96.44%",
+    "uptime": "96.45%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "98.12%",
-    "uptimeMonth": "96.44%",
-    "uptimeYear": "96.44%",
-    "time": 536,
-    "timeDay": 312,
-    "timeWeek": 266,
-    "timeMonth": 536,
-    "timeYear": 536,
+    "uptimeMonth": "96.45%",
+    "uptimeYear": "96.45%",
+    "time": 532,
+    "timeDay": 304,
+    "timeWeek": 269,
+    "timeMonth": 532,
+    "timeYear": 532,
     "dailyMinutesDown": {
       "2026-06-03": 367,
       "2026-06-08": 189
@@ -955,11 +955,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "97.66%",
     "uptimeYear": "97.66%",
-    "time": 423,
-    "timeDay": 223,
+    "time": 419,
+    "timeDay": 207,
     "timeWeek": 143,
-    "timeMonth": 423,
-    "timeYear": 423,
+    "timeMonth": 419,
+    "timeYear": 419,
     "dailyMinutesDown": {
       "2026-06-03": 366
     }
@@ -969,19 +969,20 @@
     "url": "https://ws.prixe.io/nasdaq",
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "nasdaq-streaming-web-socket",
-    "status": "down",
-    "uptime": "99.36%",
-    "uptimeDay": "92.35%",
-    "uptimeWeek": "98.91%",
-    "uptimeMonth": "99.36%",
-    "uptimeYear": "99.36%",
-    "time": 192,
-    "timeDay": 247,
+    "status": "up",
+    "uptime": "99.28%",
+    "uptimeDay": "91.41%",
+    "uptimeWeek": "98.77%",
+    "uptimeMonth": "99.28%",
+    "uptimeYear": "99.28%",
+    "time": 191,
+    "timeDay": 236,
     "timeWeek": 222,
-    "timeMonth": 192,
-    "timeYear": 192,
+    "timeMonth": 191,
+    "timeYear": 191,
     "dailyMinutesDown": {
-      "2026-06-13": 110
+      "2026-06-14": 12,
+      "2026-06-13": 111
     }
   },
   {
@@ -995,11 +996,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 178,
-    "timeDay": 245,
-    "timeWeek": 202,
-    "timeMonth": 178,
-    "timeYear": 178,
+    "time": 177,
+    "timeDay": 235,
+    "timeWeek": 203,
+    "timeMonth": 177,
+    "timeYear": 177,
     "dailyMinutesDown": {}
   },
   {
@@ -1013,11 +1014,11 @@
     "uptimeWeek": "99.36%",
     "uptimeMonth": "99.62%",
     "uptimeYear": "99.62%",
-    "time": 192,
-    "timeDay": 251,
-    "timeWeek": 222,
-    "timeMonth": 192,
-    "timeYear": 192,
+    "time": 191,
+    "timeDay": 239,
+    "timeWeek": 223,
+    "timeMonth": 191,
+    "timeYear": 191,
     "dailyMinutesDown": {
       "2026-06-13": 65
     }
