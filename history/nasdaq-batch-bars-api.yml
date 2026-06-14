@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/nasdaq/batch_bars
-status: down
-code: 400
-responseTime: 52
-lastUpdated: 2026-06-14T17:26:29.471Z
+status: up
+code: 200
+responseTime: 124
+lastUpdated: 2026-06-14T19:42:45.704Z
 startTime: 2026-06-02T00:25:39.274Z
 generator: Upptime <https://github.com/upptime/upptime>
