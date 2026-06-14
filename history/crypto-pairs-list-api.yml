@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/crypto/list
-status: down
-code: 400
-responseTime: 44
-lastUpdated: 2026-06-14T17:26:53.824Z
+status: up
+code: 200
+responseTime: 103
+lastUpdated: 2026-06-14T19:42:51.223Z
 startTime: 2026-06-02T00:25:40.750Z
 generator: Upptime <https://github.com/upptime/upptime>
