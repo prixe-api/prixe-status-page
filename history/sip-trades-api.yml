@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/sip/trades
-status: down
-code: 400
-responseTime: 88
-lastUpdated: 2026-06-14T23:16:25.812Z
+status: up
+code: 200
+responseTime: 64
+lastUpdated: 2026-06-15T04:21:20.963Z
 startTime: 2026-06-03T03:17:23.951Z
 generator: Upptime <https://github.com/upptime/upptime>
