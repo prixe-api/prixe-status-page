@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/dividends_calendar
-status: down
-code: 400
-responseTime: 167
-lastUpdated: 2026-06-15T11:02:57.984Z
+status: up
+code: 200
+responseTime: 407
+lastUpdated: 2026-06-15T14:10:40.299Z
 startTime: 2026-06-03T03:22:09.703Z
 generator: Upptime <https://github.com/upptime/upptime>
