@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/sip/movers?top=10
-status: down
-code: 400
-responseTime: 87
-lastUpdated: 2026-06-14T23:16:52.325Z
+status: up
+code: 200
+responseTime: 67
+lastUpdated: 2026-06-15T04:21:26.246Z
 startTime: 2026-06-03T03:18:58.704Z
 generator: Upptime <https://github.com/upptime/upptime>
