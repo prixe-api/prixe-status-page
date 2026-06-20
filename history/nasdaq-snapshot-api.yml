@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/nasdaq/snapshot?tickers=AAPL,MSFT&category=US_STOCK
 status: up
 code: 200
-responseTime: 152
-lastUpdated: 2026-06-20T20:18:26.183Z
+responseTime: 384
+lastUpdated: 2026-06-20T22:13:31.757Z
 startTime: 2026-06-02T00:25:36.340Z
 generator: Upptime <https://github.com/upptime/upptime>
