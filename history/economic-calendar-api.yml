@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/economic_calendar
-status: down
-code: 502
-responseTime: 607
-lastUpdated: 2026-07-10T07:40:35.243Z
+status: up
+code: 200
+responseTime: 69
+lastUpdated: 2026-07-10T08:57:21.904Z
 startTime: 2026-06-03T03:23:44.712Z
 generator: Upptime <https://github.com/upptime/upptime>
