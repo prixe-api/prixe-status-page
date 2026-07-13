@@ -1,0 +1,381 @@
+{
+  "generatedAt": "2026-07-10T21:16:07.331Z",
+  "total": 37,
+  "passed": 37,
+  "failed": 0,
+  "warned": 1,
+  "results": [
+    {
+      "name": "Search API",
+      "url": "https://api.prixe.io/api/search",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 1685,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": [
+        "response is not strict-valid JSON (contains NaN/Infinity tokens)"
+      ]
+    },
+    {
+      "name": "Last Sold Price API",
+      "url": "https://api.prixe.io/api/last_sold",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 611,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Historical Price API",
+      "url": "https://api.prixe.io/api/price",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 548,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Market Stats API",
+      "url": "https://api.prixe.io/api/stats",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 744,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "News API",
+      "url": "https://api.prixe.io/api/news",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 780,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Stock Splits API",
+      "url": "https://api.prixe.io/api/splits",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 440,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SEC Forms List API",
+      "url": "https://api.prixe.io/api/forms?ticker=AAPL",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 667,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SEC Forms Data API",
+      "url": "https://api.prixe.io/api/forms",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 299,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SEC Financials API",
+      "url": "https://api.prixe.io/api/forms/financials",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 137,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Board Members API",
+      "url": "https://api.prixe.io/api/board_members",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 86,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Politicians API",
+      "url": "https://api.prixe.io/api/politicians",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 140,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Politicians List API",
+      "url": "https://api.prixe.io/api/politicians/list",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 69,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Politicians Holdings API",
+      "url": "https://api.prixe.io/api/politicians/holdings",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 151,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Politicians Executive Disclosures API",
+      "url": "https://api.prixe.io/api/politicians/executive_disclosures",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 8648,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "IPO Calendar API",
+      "url": "https://api.prixe.io/api/ipo_calendar",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 75,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Dividends Calendar API",
+      "url": "https://api.prixe.io/api/dividends_calendar",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 186,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Earnings Calendar API",
+      "url": "https://api.prixe.io/api/earnings_calendar",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 145,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Economic Calendar API",
+      "url": "https://api.prixe.io/api/economic_calendar",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 288,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Nasdaq Snapshot API",
+      "url": "https://api.prixe.io/api/nasdaq/snapshot?tickers=AAPL,MSFT&category=US_STOCK",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 197,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Nasdaq Quotes API",
+      "url": "https://api.prixe.io/api/nasdaq/quotes?ticker=AAPL&category=US_STOCK",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 753,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Nasdaq Tick API",
+      "url": "https://api.prixe.io/api/nasdaq/tick?ticker=AAPL&category=US_STOCK&count=10",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 159,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Nasdaq Bars API",
+      "url": "https://api.prixe.io/api/nasdaq/bars?ticker=AAPL&category=US_STOCK&timespan=D&count=10",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 77,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Nasdaq Batch Bars API",
+      "url": "https://api.prixe.io/api/nasdaq/batch_bars",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 70,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Crypto Market Data API",
+      "url": "https://api.prixe.io/api/crypto",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 192,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Crypto Pairs List API",
+      "url": "https://api.prixe.io/api/crypto/list",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 94,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "IEX Bars API",
+      "url": "https://api.prixe.io/api/iex/bars",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 326,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "IEX Quotes API",
+      "url": "https://api.prixe.io/api/iex/quotes",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 162,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "IEX Trades API",
+      "url": "https://api.prixe.io/api/iex/trades",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 133,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "IEX Snapshot API",
+      "url": "https://api.prixe.io/api/iex/snapshot",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 104,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Bars API",
+      "url": "https://api.prixe.io/api/sip/bars",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 62,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Quotes API",
+      "url": "https://api.prixe.io/api/sip/quotes",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 134,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Trades API",
+      "url": "https://api.prixe.io/api/sip/trades",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 126,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Snapshot API",
+      "url": "https://api.prixe.io/api/sip/snapshot",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 126,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Movers API",
+      "url": "https://api.prixe.io/api/sip/movers?top=10",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 97,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "SIP Most Actives API",
+      "url": "https://api.prixe.io/api/sip/most_actives?by=volume&top=10",
+      "method": "GET",
+      "httpStatus": 200,
+      "timeMs": 56,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Corporate Actions API",
+      "url": "https://api.prixe.io/api/corporate_actions",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 85,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    },
+    {
+      "name": "Options API",
+      "url": "https://api.prixe.io/api/options",
+      "method": "POST",
+      "httpStatus": 200,
+      "timeMs": 149,
+      "ok": true,
+      "hardFailures": [],
+      "warnings": []
+    }
+  ]
+}

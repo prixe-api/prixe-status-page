@@ -367,12 +367,15 @@ module.exports = [
     keyEnv: PROPLUS,
     method: 'POST',
     url: 'https://api.prixe.io/api/iex/bars',
-    body: { ticker: 'AAPL' },
+    // latest:true returns the last available bar (an object) regardless of
+    // market hours; a bare request defaults to today's bars and is empty on
+    // weekends/holidays. Mirrors the IEX Quotes/Trades pattern.
+    body: { ticker: 'AAPL', latest: true },
     checks: [
       { path: 'bars', type: 'object', minKeys: 1 },
-      { path: 'bars.AAPL', type: 'array', minLength: 1 },
-      { path: 'bars.AAPL[0].close', type: 'number' },
-      { path: 'bars.AAPL[0].timestamp', type: 'string', nonEmpty: true },
+      { path: 'bars.AAPL', type: 'object', minKeys: 1 },
+      { path: 'bars.AAPL.close', type: 'number' },
+      { path: 'bars.AAPL.timestamp', type: 'string', nonEmpty: true },
     ],
   },
   {
@@ -422,11 +425,14 @@ module.exports = [
     keyEnv: PROPLUS,
     method: 'POST',
     url: 'https://api.prixe.io/api/sip/bars',
-    body: { ticker: 'AAPL', timeframe: '1Day', limit: 5 },
+    // latest:true returns the last available bar (an object) regardless of
+    // market hours; a bare/dated request is empty on weekends/holidays.
+    body: { ticker: 'AAPL', latest: true },
     checks: [
-      { path: 'bars.AAPL', type: 'array', minLength: 1 },
-      { path: 'bars.AAPL[0].close', type: 'number' },
-      { path: 'bars.AAPL[0].timestamp', type: 'string', nonEmpty: true },
+      { path: 'bars', type: 'object', minKeys: 1 },
+      { path: 'bars.AAPL', type: 'object', minKeys: 1 },
+      { path: 'bars.AAPL.close', type: 'number' },
+      { path: 'bars.AAPL.timestamp', type: 'string', nonEmpty: true },
     ],
   },
   {
