@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/splits
-status: degraded
-code: 504
-responseTime: 29232
-lastUpdated: 2026-07-27T15:49:52.620Z
+status: up
+code: 200
+responseTime: 624
+lastUpdated: 2026-07-27T17:27:24.633Z
 startTime: 2026-06-02T00:25:07.586Z
 generator: Upptime <https://github.com/upptime/upptime>
