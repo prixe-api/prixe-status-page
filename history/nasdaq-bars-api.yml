@@ -1,7 +1,7 @@
 url: https://api.prixe.io/api/nasdaq/bars?ticker=AAPL&category=US_STOCK&timespan=D&count=10
-status: up
-code: 200
-responseTime: 76
-lastUpdated: 2026-08-08T14:35:15.093Z
+status: down
+code: 502
+responseTime: 3403
+lastUpdated: 2026-08-08T15:34:45.327Z
 startTime: 2026-06-02T00:25:38.600Z
 generator: Upptime <https://github.com/upptime/upptime>
