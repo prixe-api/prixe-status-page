@@ -1,7 +1,7 @@
 url: https://ws.prixe.io/order_book
 status: up
-code: 426
-responseTime: 9
-lastUpdated: 2026-11-15T08:58:35.059Z
+code: 200
+responseTime: 317
+lastUpdated: 2026-11-15T13:33:53.340Z
 startTime: 2026-06-02T00:25:43.652Z
 generator: Upptime <https://github.com/upptime/upptime>
