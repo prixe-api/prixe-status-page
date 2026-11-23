@@ -38,7 +38,7 @@
     "time": 639,
     "timeDay": 448,
     "timeWeek": 348,
-    "timeMonth": 480,
+    "timeMonth": 481,
     "timeYear": 639,
     "dailyMinutesDown": {
       "2026-02-02": 32,
@@ -272,7 +272,7 @@
     "time": 664,
     "timeDay": 2188,
     "timeWeek": 1517,
-    "timeMonth": 1438,
+    "timeMonth": 1441,
     "timeYear": 664,
     "dailyMinutesDown": {
       "2026-02-12": 66,
@@ -305,15 +305,15 @@
     "icon": "https://prixe.io/static/images/prixe.png",
     "slug": "sec-forms-list-api",
     "status": "up",
-    "uptime": "99.07%",
+    "uptime": "99.08%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.07%",
+    "uptimeYear": "99.08%",
     "time": 458,
     "timeDay": 595,
     "timeWeek": 516,
-    "timeMonth": 575,
+    "timeMonth": 577,
     "timeYear": 458,
     "dailyMinutesDown": {
       "2026-02-11": 30,
@@ -355,7 +355,7 @@
     "time": 333,
     "timeDay": 482,
     "timeWeek": 346,
-    "timeMonth": 361,
+    "timeMonth": 359,
     "timeYear": 333,
     "dailyMinutesDown": {
       "2026-02-10": 57,
@@ -459,7 +459,7 @@
     "time": 191,
     "timeDay": 256,
     "timeWeek": 188,
-    "timeMonth": 195,
+    "timeMonth": 194,
     "timeYear": 191,
     "dailyMinutesDown": {
       "2026-06-03": 404,
@@ -503,7 +503,7 @@
     "time": 7936,
     "timeDay": 7338,
     "timeWeek": 7267,
-    "timeMonth": 7248,
+    "timeMonth": 7249,
     "timeYear": 7936,
     "dailyMinutesDown": {
       "2026-05-06": 29,
@@ -600,7 +600,7 @@
     "time": 269,
     "timeDay": 251,
     "timeWeek": 183,
-    "timeMonth": 275,
+    "timeMonth": 276,
     "timeYear": 269,
     "dailyMinutesDown": {
       "2026-06-03": 400,
@@ -623,7 +623,7 @@
     "time": 256,
     "timeDay": 253,
     "timeWeek": 199,
-    "timeMonth": 188,
+    "timeMonth": 187,
     "timeYear": 256,
     "dailyMinutesDown": {
       "2026-06-03": 399,
@@ -646,7 +646,7 @@
     "time": 274,
     "timeDay": 250,
     "timeWeek": 207,
-    "timeMonth": 427,
+    "timeMonth": 429,
     "timeYear": 274,
     "dailyMinutesDown": {
       "2026-06-03": 399,
@@ -757,7 +757,7 @@
     "time": 211,
     "timeDay": 230,
     "timeWeek": 167,
-    "timeMonth": 171,
+    "timeMonth": 170,
     "timeYear": 211,
     "dailyMinutesDown": {
       "2026-06-03": 376,
@@ -780,7 +780,7 @@
     "time": 210,
     "timeDay": 231,
     "timeWeek": 172,
-    "timeMonth": 179,
+    "timeMonth": 178,
     "timeYear": 210,
     "dailyMinutesDown": {
       "2026-06-03": 375,
@@ -913,7 +913,7 @@
     "time": 213,
     "timeDay": 225,
     "timeWeek": 165,
-    "timeMonth": 172,
+    "timeMonth": 171,
     "timeYear": 213,
     "dailyMinutesDown": {
       "2026-06-03": 371,
@@ -979,7 +979,7 @@
     "time": 248,
     "timeDay": 308,
     "timeWeek": 224,
-    "timeMonth": 264,
+    "timeMonth": 263,
     "timeYear": 248,
     "dailyMinutesDown": {
       "2026-06-03": 369,
@@ -1026,7 +1026,7 @@
     "time": 260,
     "timeDay": 285,
     "timeWeek": 231,
-    "timeMonth": 249,
+    "timeMonth": 248,
     "timeYear": 260,
     "dailyMinutesDown": {
       "2026-06-03": 367,
@@ -1073,7 +1073,7 @@
     "time": 284,
     "timeDay": 351,
     "timeWeek": 329,
-    "timeMonth": 334,
+    "timeMonth": 335,
     "timeYear": 284,
     "dailyMinutesDown": {
       "2026-06-14": 12,
